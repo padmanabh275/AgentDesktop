@@ -1,0 +1,24 @@
+# Preset USER_QUERY strings for the Agent Desktop UI.
+# The planner receives these verbatim and emits the DAG (computer + formatter, etc.).
+
+presets:
+  - id: calc_hotkey
+    label: "Calculator (847 x 293)"
+    layer: hotkey
+    query: "Open Calculator and compute 847 times 293. Return the displayed result."
+    hint: "Layer 2a hotkey path via cua-driver; no vision."
+    prereq: "cua-driver daemon running"
+
+  - id: canvas_vision
+    label: "Canvas — click red circle"
+    layer: vision
+    query: "Open the canvas fixture and click inside the red circle on the canvas."
+    hint: "Layer 3 vision path; opens computer/fixtures/canvas_only.html in your browser."
+    prereq: "cua-driver + gateway vision provider (openai or gemini)"
+
+  - id: cursor_electron
+    label: "Cursor — create evidence file"
+    layer: electron
+    query: "In Cursor, create notes/s10_evidence.txt containing: Computer-Use Layer2b OK"
+    hint: "Layer 2b electron/CDP path."
+    prereq: "Run computer/scripts/launch_cursor_debug.ps1 first (port 9222)"

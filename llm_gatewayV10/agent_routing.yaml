@@ -1,0 +1,12 @@
+# V10 agent -> provider pinning (optional).
+#
+# When a skill name appears here, the gateway treats it as an explicit
+# provider pin — failover is DISABLED for that agent (only that provider).
+#
+# For free-first failover through LLM_ORDER, leave this file empty (or
+# comment out entries). The gateway then walks:
+#   gemini → nvidia → groq → cerebras → openrouter → github → ollama → openai
+# skipping providers that are unconfigured, rate-limited, or in cooldown.
+#
+# To force one provider for a skill, uncomment a line:
+# planner: openai

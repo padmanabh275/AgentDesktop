@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LLM Gateway V10 · Help & Free Keys</title>
+<style>
+  :root {
+    --bg: #0d1117; --panel: #161b22; --border: #30363d; --text: #c9d1d9;
+    --muted: #8b949e; --green: #3fb950; --red: #f85149; --blue: #58a6ff;
+    --yellow: #d29922; --accent: #a371f7;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; margin: 0; }
+  header { padding: 14px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  header h1 { margin: 0; font-size: 18px; font-weight: 600; }
+  header nav a { color: var(--blue); margin-left: 16px; text-decoration: none; }
+  main { padding: 24px 20px; max-width: 1000px; margin: 0 auto; }
+  h2 { font-size: 18px; margin-top: 36px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  h3 { font-size: 16px; margin-top: 24px; color: var(--blue); }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 13px; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 11px; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace; }
+  code { background: #21262d; padding: 1px 6px; border-radius: 3px; font-size: 13px; }
+  pre { background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 12px; overflow-x: auto; font-size: 13px; }
+  ol li, ul li { margin: 4px 0; }
+  .star { color: var(--yellow); }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; background: #21262d; color: var(--muted); margin-left: 6px; }
+  .ok { color: var(--green); }
+  .warn { color: var(--yellow); }
+  .err { color: var(--red); }
+  a { color: var(--blue); }
+</style>
+</head>
+<body>
+<header>
+  <h1>📚 LLM Gateway <span style="color:var(--accent)">V10</span> · Help</h1>
+  <nav>
+    <a href="/">Dashboard</a>
+    <a href="/help">Help</a>
+  </nav>
+</header>
+<main>
+
+<p><strong>LLM Gateway V10</strong> routes chat, vision, and embedding calls across <strong>eight worker providers</strong>, with automatic failover, a separate router pool for <code>auto_route</code> tier classification, rate-limit tracking, per-agent cost ledgers, and persistent logging. Default port: <strong>8110</strong>.</p>
+
+<h2>What's new in V10</h2>
+<ul>
+  <li><strong>Vision</strong> — <code>POST /v1/vision</code> and multimodal <code>/v1/chat</code> (image blocks auto-route to vision-capable models)</li>
+  <li><strong>Embeddings</strong> — <code>POST /v1/embed</code> with fixed <strong>768-dim</strong> vectors (Ollama → OpenAI/Gemini failover)</li>
+  <li><strong>Agent tagging</strong> — pass <code>agent</code> and <code>session</code> on chat calls; roll up cost via <code>/v1/cost/by_agent</code></li>
+  <li><strong>Batch</strong> — <code>POST /v1/chat/batch</code> for bounded-concurrency multi-call dispatch</li>
+  <li><strong>Router pool</strong> — <code>auto_route=perception|memory|decision</code> picks TINY / LARGE / HUGE tier before worker failover</li>
+</ul>
+
+<h2>Using the gateway</h2>
+
+<h3>Python (built-in client)</h3>
+<pre><code>from client import LLM, ask
+
+# one-shot
+print(ask("Explain transformers in 3 lines"))
+
+# explicit provider (shortcut keys: oai, g, n, o, gr, c, or, gh)
+print(ask("hi", provider="gr"))   # groq
+print(ask("hi", provider="g"))    # gemini
+
+# full client with agent/session tagging (V10)
+llm = LLM()  # defaults to http://localhost:8110
+r = llm.chat("hi", provider="gemini", agent="planner", session="my-run",
+              max_tokens=128, temperature=0.5)
+print(r["text"], r["provider"], r["latency_ms"])
+
+# auto-routed call
+r = llm.chat("Summarize this passage…", auto_route="memory")
+
+# embedding (768-dim)
+vec = llm.embed("hello world", task_type="retrieval_document")
+
+# streaming
+for chunk in llm.stream("count to 5"):
+    print(chunk, end="", flush=True)</code></pre>
+
+<h3>HTTP</h3>
+<pre><code>curl http://localhost:8110/v1/chat \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": "hello", "provider": "g", "max_tokens": 128, "agent": "planner", "session": "demo"}'</code></pre>
+
+<h3>Shortcut keys</h3>
+<table>
+  <tr><th>Key</th><th>Provider</th><th>Aliases</th></tr>
+  <tr><td><code>oai</code></td><td>OpenAI</td><td><code>oa</code>, <code>openai</code></td></tr>
+  <tr><td><code>g</code></td><td>Gemini</td><td><code>gem</code>, <code>gemini</code></td></tr>
+  <tr><td><code>n</code></td><td>NVIDIA NIM</td><td><code>nv</code>, <code>nvidia</code></td></tr>
+  <tr><td><code>o</code></td><td>Ollama (local)</td><td><code>oll</code>, <code>ollama</code></td></tr>
+  <tr><td><code>gr</code></td><td>Groq</td><td><code>groq</code></td></tr>
+  <tr><td><code>c</code></td><td>Cerebras</td><td><code>cer</code>, <code>cerebras</code></td></tr>
+  <tr><td><code>or</code></td><td>OpenRouter</td><td><code>opr</code>, <code>openrouter</code></td></tr>
+  <tr><td><code>gh</code></td><td>GitHub Models</td><td><code>ghb</code>, <code>github</code></td></tr>
+</table>
+<p>Without <code>provider</code>, the gateway walks <code>LLM_ORDER</code> from <code>.env</code>. Explicit <code>provider</code> disables failover (errors surface immediately). Per-skill pins can also be set in <code>agent_routing.yaml</code>.</p>
+
+<h2>Provider overview</h2>
+
+<h3>1. OpenAI</h3>
+<ul>
+  <li>Default: <code>gpt-4o-mini</code> <span class="star">★</span> — tools, structured output, vision</li>
+  <li>Also used as embedding fallback: <code>text-embedding-3-small</code> (768-dim when configured)</li>
+  <li>Paid list rates; set <code>OPENAI_API_KEY</code> in <code>.env</code></li>
+</ul>
+
+<h3>2. Gemini (Google AI Studio)</h3>
+<ul>
+  <li>Best models: <code>gemini-3.1-pro-preview</code>, <code>gemini-3.1-flash-lite</code> <span class="star">★ default</span>, <code>gemini-2.5-flash</code></li>
+  <li>Context: <strong>1M tokens in / 65K out</strong> · vision-capable</li>
+  <li>Free tier (Flash-Lite): ~15 RPM · 250K TPM · 1,000 RPD</li>
+</ul>
+<p><b>Get a key:</b> <a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com/app/apikey</a> → Create API key (no card required for free tier).</p>
+
+<h3>3. NVIDIA NIM (build.nvidia.com)</h3>
+<ul>
+  <li>Default: <code>deepseek-ai/deepseek-v3.2</code> <span class="star">★</span></li>
+  <li>Free tier: <strong>40 RPM</strong>, 1,000 inference credits on signup</li>
+</ul>
+<p><b>Get a key:</b> <a href="https://build.nvidia.com/" target="_blank">build.nvidia.com</a> → any model → Get API Key.</p>
+
+<h3>4. Groq <span class="badge">fastest cloud</span></h3>
+<ul>
+  <li>Worker default: <code>openai/gpt-oss-120b</code> <span class="star">★</span> (reasoning knob)</li>
+  <li>Router model: <code>llama-3.3-70b-versatile</code></li>
+  <li>Free tier: <strong>30 RPM · 6,000 TPM · 1,000 RPD</strong></li>
+</ul>
+<p><b>Get a key:</b> <a href="https://console.groq.com" target="_blank">console.groq.com</a> → API Keys.</p>
+
+<h3>5. Cerebras <span class="badge">2000+ tok/s</span></h3>
+<ul>
+  <li>Worker default: <code>zai-glm-4.7</code> <span class="star">★</span></li>
+  <li>Router default: <code>llama3.1-8b</code> <span class="warn">(deprecates May 2026 — override via ROUTER_CEREBRAS_MODEL)</span></li>
+  <li>Free tier: <strong>30 RPM · 1M tokens/day</strong> · 8K ctx cap</li>
+</ul>
+<p><b>Get a key:</b> <a href="https://cloud.cerebras.ai" target="_blank">cloud.cerebras.ai</a> → API Keys.</p>
+
+<h3>6. OpenRouter <span class="badge">one key, many models</span></h3>
+<ul>
+  <li>Default: <code>nvidia/nemotron-3-super-120b-a12b:free</code> <span class="star">★</span></li>
+  <li>Free tier: <strong>20 RPM · 50 RPD per free model</strong></li>
+</ul>
+<p><b>Get a key:</b> <a href="https://openrouter.ai" target="_blank">openrouter.ai</a> → Keys.</p>
+
+<h3>7. GitHub Models</h3>
+<ul>
+  <li>Default: <code>openai/gpt-4.1-mini</code> <span class="star">★</span></li>
+  <li><span class="warn">Free tier per-request cap: 8K input / 4K output tokens</span></li>
+  <li>Low-tier: <strong>15 RPM · 150 RPD</strong> · High-tier: <strong>10 RPM · 50 RPD</strong></li>
+</ul>
+<p><b>Get a key:</b> <a href="https://github.com/marketplace/models" target="_blank">github.com/marketplace/models</a> → Use this model → Get API key.</p>
+
+<h3>8. Ollama (local)</h3>
+<ul>
+  <li>Runs on your machine — zero rate limits, zero cost</li>
+  <li>Chat model via <code>OLLAMA_MODEL</code>; embeddings via <code>nomic-embed-text</code> (768-dim)</li>
+</ul>
+<p><b>Set up:</b> <a href="https://ollama.com" target="_blank">ollama.com</a> → <code>ollama pull nomic-embed-text</code> for embeddings.</p>
+
+<h2>Summary table</h2>
+<table>
+  <tr><th>Provider</th><th>Default model</th><th>RPM</th><th>RPD</th><th>Notes</th></tr>
+  <tr><td>OpenAI</td><td>gpt-4o-mini</td><td>60</td><td>10K</td><td>paid · vision</td></tr>
+  <tr><td>Gemini</td><td>gemini-3.1-flash-lite</td><td>15</td><td>1,000</td><td>vision · 1M ctx</td></tr>
+  <tr><td>NVIDIA NIM</td><td>deepseek-ai/deepseek-v3.2</td><td>40</td><td>—</td><td>free credits</td></tr>
+  <tr><td>Groq</td><td>openai/gpt-oss-120b</td><td>30</td><td>1,000</td><td>reasoning</td></tr>
+  <tr><td>Cerebras</td><td>zai-glm-4.7</td><td>30</td><td>—</td><td>1M tok/day · 8K ctx</td></tr>
+  <tr><td>OpenRouter</td><td>nvidia/nemotron-3-super-120b-a12b:free</td><td>20</td><td>50</td><td>per model</td></tr>
+  <tr><td>GitHub Models</td><td>openai/gpt-4.1-mini</td><td>10–15</td><td>50–150</td><td>8K in / 4K out</td></tr>
+  <tr><td>Ollama</td><td>env-controlled</td><td>—</td><td>—</td><td>local · embeds</td></tr>
+</table>
+
+<h2>Configuration (.env)</h2>
+<p>The gateway reads <code>.env</code> beside the gateway directory or one level up. All keys are optional — unconfigured providers are skipped.</p>
+<pre><code>OPENAI_API_KEY=...
+OPENAI_MODEL=gpt-4o-mini
+
+GEMINI_API_KEY=...
+GEMINI_MODEL=gemini-3.1-flash-lite
+
+NVIDIA_API_KEY=...
+NVIDIA_MODEL=deepseek-ai/deepseek-v3.2
+
+GROQ_API_KEY=...
+GROQ_MODEL=openai/gpt-oss-120b
+
+CEREBRAS_API_KEY=...
+CEREBRAS_MODEL=zai-glm-4.7
+
+OPEN_ROUTER_API_KEY=...
+OPENROUTER_MODEL=nvidia/nemotron-3-super-120b-a12b:free
+
+GITHUB_ACCESS_TOKEN=...
+GITHUB_MODEL=openai/gpt-4.1-mini
+
+OLLAMA_URL=http://localhost:11434
+OLLAMA_MODEL=gemma4:31b
+
+EMBED_OLLAMA_MODEL=nomic-embed-text
+EMBED_FALLBACK_PROVIDER=openai
+EMBED_FALLBACK_MODEL=text-embedding-3-small
+
+LLM_ORDER=gemini,nvidia,groq,cerebras,openrouter,github,ollama,openai
+ROUTER_ORDER=cerebras,groq,nvidia,github
+GATEWAY_V10_PORT=8110</code></pre>
+
+<h2>HTTP API reference (V10)</h2>
+<table>
+  <tr><th>Method</th><th>Path</th><th>Purpose</th></tr>
+  <tr><td>POST</td><td><code>/v1/chat</code></td><td>Chat (tools, streaming, <code>auto_route</code>, <code>agent</code>, <code>session</code>, multimodal)</td></tr>
+  <tr><td>POST</td><td><code>/v1/chat/batch</code></td><td>Bounded-concurrency batch of chat requests</td></tr>
+  <tr><td>POST</td><td><code>/v1/vision</code></td><td>Single-image vision call (shim over multimodal chat)</td></tr>
+  <tr><td>POST</td><td><code>/v1/embed</code></td><td>768-dim embedding (<code>retrieval_document</code> / <code>retrieval_query</code>)</td></tr>
+  <tr><td>GET</td><td><code>/v1/providers</code></td><td>Worker pool: order, shortcuts, models, limits</td></tr>
+  <tr><td>GET</td><td><code>/v1/routers</code></td><td>Router pool for <code>auto_route</code> tier classification</td></tr>
+  <tr><td>GET</td><td><code>/v1/embedders</code></td><td>Embedder pool, fixed dim, live rate state</td></tr>
+  <tr><td>GET</td><td><code>/v1/capabilities</code></td><td>Per-provider capability matrix (tools, vision, …)</td></tr>
+  <tr><td>GET</td><td><code>/v1/status</code></td><td>Worker pool live RPM/RPD/TPM usage</td></tr>
+  <tr><td>GET</td><td><code>/v1/cost/by_agent</code></td><td>Per-agent token + USD rollup (<code>?session=</code>, <code>?agent=</code>)</td></tr>
+  <tr><td>GET</td><td><code>/v1/calls</code></td><td>Recent call log (<code>limit</code>, <code>provider</code>, <code>status</code>)</td></tr>
+  <tr><td>GET</td><td><code>/</code></td><td>Dashboard</td></tr>
+  <tr><td>GET</td><td><code>/help</code></td><td>This page</td></tr>
+</table>
+
+<h2>How failover works</h2>
+<ol>
+  <li>Caller sends a request (optional <code>provider</code>, <code>auto_route</code>, <code>agent</code>).</li>
+  <li>If <code>auto_route</code> is set and no explicit provider: router pool classifies TINY / LARGE / HUGE, then worker order follows the tier table.</li>
+  <li>Router estimates token usage; skips providers in cooldown or over RPM/RPD/TPM caps.</li>
+  <li>First eligible worker gets the call. On 5xx / timeout / 429 → next provider (unless <code>provider</code> was pinned).</li>
+  <li>Every call is logged to SQLite with <code>call_role</code> (worker, router_*, embed) and optional <code>agent</code> / <code>session</code> tags.</li>
+</ol>
+
+</main>
+</body>
+</html>

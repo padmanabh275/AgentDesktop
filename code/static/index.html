@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agent Desktop UI</title>
+  <style>
+    :root {
+      --bg: #0a0e14; --panel: #141a22; --panel2: #1a2230; --border: #2d3640;
+      --text: #e6edf3; --muted: #8b9cb3;
+      --green: #3fb950; --red: #f85149; --blue: #58a6ff;
+      --yellow: #e3b341; --accent: #a371f7;
+      --skill-planner: #a371f7; --skill-computer: #39d4d4; --skill-formatter: #3fb950;
+      --layer-hotkey: #f0883e; --layer-electron: #58a6ff; --layer-vision: #f778ba;
+      --vision-ok: #f778ba; --vision-bad: #f85149;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--bg); color: var(--text);
+      font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      margin: 0; padding: 0;
+    }
+    header {
+      padding: 14px 20px;
+      background: linear-gradient(135deg, #141a22 0%, #1a1040 50%, #0f2030 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+    }
+    header h1 { margin: 0; font-size: 18px; font-weight: 600; color: #fff; }
+    header a { color: var(--blue); text-decoration: none; margin-left: 12px; font-size: 13px; }
+    main { padding: 20px; max-width: 1100px; margin: 0 auto; }
+    h2 {
+      font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--muted); margin: 20px 0 10px; font-weight: 600;
+    }
+    .health { display: flex; gap: 8px; flex-wrap: wrap; font-size: 12px; }
+    .pill {
+      padding: 4px 10px; border-radius: 12px; background: var(--panel2);
+      border: 1px solid var(--border);
+    }
+    .pill.ok { border-color: var(--green); color: var(--green); }
+    .pill.bad { border-color: var(--red); color: var(--red); }
+    .pill.vision-ok { border-color: var(--vision-ok); color: var(--vision-ok); }
+    .pill.vision-bad { border-color: var(--vision-bad); color: var(--vision-bad); }
+    .presets { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+    .preset {
+      background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+      border-left: 4px solid var(--border);
+      padding: 12px; cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .preset[data-layer="hotkey"] { border-left-color: var(--layer-hotkey); }
+    .preset[data-layer="electron"] { border-left-color: var(--layer-electron); }
+    .preset[data-layer="vision"] { border-left-color: var(--layer-vision); }
+    .preset:hover { border-color: var(--blue); box-shadow: 0 2px 12px rgba(88,166,255,0.12); }
+    .preset.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+    .preset .label { font-weight: 600; font-size: 14px; }
+    .preset .hint { color: var(--muted); font-size: 12px; margin-top: 6px; }
+    .preset .prereq { color: var(--yellow); font-size: 11px; margin-top: 4px; }
+    textarea {
+      width: 100%; min-height: 100px; background: var(--panel); color: var(--text);
+      border: 1px solid var(--border); border-radius: 6px; padding: 10px;
+      font: 13px ui-monospace, SFMono-Regular, Consolas, monospace; resize: vertical;
+    }
+    .row { display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap; }
+    button {
+      background: linear-gradient(180deg, #4d9af5 0%, #3a8cf2 100%);
+      border: none; color: #fff; padding: 8px 18px;
+      border-radius: 6px; font-size: 14px; cursor: pointer; font-weight: 500;
+    }
+    button:hover { filter: brightness(1.08); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    button.secondary { background: var(--panel2); border: 1px solid var(--border); color: var(--text); }
+    #session-id { color: var(--muted); font-size: 12px; font-family: ui-monospace, monospace; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+    th { color: var(--muted); font-size: 11px; text-transform: uppercase; }
+    tr.row-running { background: rgba(227, 179, 65, 0.06); animation: pulse-row 2s ease-in-out infinite; }
+    @keyframes pulse-row { 0%, 100% { background: rgba(227, 179, 65, 0.04); } 50% { background: rgba(227, 179, 65, 0.1); } }
+    .skill-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .skill-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .skill-planner .skill-dot { background: var(--skill-planner); }
+    .skill-computer .skill-dot { background: var(--skill-computer); }
+    .skill-formatter .skill-dot { background: var(--skill-formatter); }
+    .status-complete { color: var(--green); font-weight: 500; }
+    .status-failed { color: var(--red); font-weight: 500; }
+    .status-running, .status-pending { color: var(--yellow); font-weight: 500; }
+    #desktop-view {
+      background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+      padding: 14px; margin-top: 4px;
+    }
+    #desktop-view[hidden] { display: none !important; }
+    .desktop-meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; align-items: center; }
+    .chip {
+      padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+      background: var(--panel2); border: 1px solid var(--border);
+    }
+    .chip.app { border-color: var(--skill-computer); color: var(--skill-computer); }
+    .chip.path { border-color: var(--layer-vision); color: var(--layer-vision); }
+    .chip.goal { border-color: var(--muted); color: var(--muted); font-weight: 500; max-width: 420px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .manual-banner { color: var(--yellow); font-size: 12px; margin-bottom: 8px; }
+    #click-status { color: var(--muted); font-size: 12px; min-height: 18px; }
+    .manual-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+    .manual-row label { font-size: 13px; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+    #live-frame.manual { cursor: crosshair; }
+    .click-marker {
+      position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px;
+      border: 2px solid var(--red); background: rgba(248, 81, 73, 0.35);
+      transform: rotate(45deg); pointer-events: none; border-radius: 1px;
+    }
+    .desktop-grid {
+      display: grid; grid-template-columns: 1fr 280px; gap: 14px;
+    }
+    @media (max-width: 800px) { .desktop-grid { grid-template-columns: 1fr; } }
+    .frame-wrap {
+      background: #000; border-radius: 6px; border: 1px solid var(--border);
+      min-height: 200px; display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    #live-frame { max-width: 100%; max-height: 360px; display: block; }
+    .frame-placeholder { color: var(--muted); font-size: 13px; padding: 24px; text-align: center; }
+    .window-list {
+      list-style: none; margin: 0; padding: 0; max-height: 360px; overflow-y: auto;
+      font-size: 12px;
+    }
+    .window-list li {
+      padding: 8px 10px; border-bottom: 1px solid var(--border);
+      border-left: 3px solid transparent; cursor: pointer;
+    }
+    .window-list li.target {
+      border-left-color: var(--skill-computer);
+      background: rgba(57, 212, 212, 0.08);
+    }
+    .window-list li.selected {
+      border-left-color: var(--accent);
+      background: rgba(163, 113, 247, 0.1);
+    }
+    .window-list .win-title { font-weight: 500; word-break: break-word; }
+    .window-list .win-app { color: var(--muted); font-size: 11px; margin-top: 2px; }
+    #answer {
+      background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
+      padding: 14px; white-space: pre-wrap; font-size: 14px; line-height: 1.5; min-height: 48px;
+    }
+    #computer-meta {
+      margin-top: 10px; padding: 12px; background: var(--panel);
+      border: 1px solid var(--border); border-radius: 6px; font-size: 13px;
+    }
+    .error { color: var(--red); font-size: 13px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agent Desktop UI</h1>
+    <div>
+      <a href="http://localhost:8110/static/dashboard.html" target="_blank" rel="noopener">Gateway</a>
+      <span id="health" class="health"></span>
+    </div>
+  </header>
+  <main>
+    <h2>Preset tasks</h2>
+    <p style="color:var(--muted);margin:0 0 10px;font-size:13px;">
+      Pick a preset or type a custom query. Each run goes through the full orchestrator (Planner &rarr; skills &rarr; Formatter).
+    </p>
+    <div id="presets" class="presets"></div>
+
+    <h2>USER_QUERY</h2>
+    <textarea id="query" placeholder="Describe what you want the agent to do..."></textarea>
+    <div class="row">
+      <button id="run-btn">Run</button>
+      <button id="stop-poll-btn" class="secondary" type="button" disabled>Stop polling</button>
+      <span id="session-id"></span>
+    </div>
+    <div id="run-error" class="error"></div>
+
+    <h2>Progress</h2>
+    <table>
+      <thead>
+        <tr><th>Node</th><th>Skill</th><th>Status</th><th>Detail</th></tr>
+      </thead>
+      <tbody id="nodes-body">
+        <tr><td colspan="4" style="color:var(--muted)">No run yet.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Desktop view</h2>
+    <div id="desktop-view" hidden>
+      <div id="manual-banner" class="manual-banner" hidden></div>
+      <div class="desktop-meta">
+        <span id="chip-app" class="chip app" hidden></span>
+        <span id="chip-goal" class="chip goal" hidden></span>
+        <span id="chip-path" class="chip path" hidden></span>
+        <span id="chip-turn" class="chip" hidden></span>
+        <button id="refresh-windows-btn" class="secondary" type="button" style="padding:4px 10px;font-size:12px;">Refresh windows</button>
+      </div>
+      <div class="manual-row">
+        <label><input type="checkbox" id="manual-control"> Manual control</label>
+        <span id="click-status"></span>
+      </div>
+      <div class="desktop-grid">
+        <div>
+          <div class="frame-wrap" id="frame-wrap">
+            <img id="live-frame" alt="Agent screenshot" hidden>
+            <div id="frame-placeholder" class="frame-placeholder">Waiting for computer skill…</div>
+          </div>
+        </div>
+        <div>
+          <div style="color:var(--muted);font-size:11px;text-transform:uppercase;margin-bottom:6px;">Open windows</div>
+          <ul id="window-list" class="window-list">
+            <li style="color:var(--muted)">No windows listed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2>Answer</h2>
+    <div id="answer">Run a query to see the formatter output.</div>
+    <div id="computer-meta" hidden></div>
+  </main>
+  <script>
+    const presetsEl = document.getElementById("presets");
+    const queryEl = document.getElementById("query");
+    const runBtn = document.getElementById("run-btn");
+    const stopPollBtn = document.getElementById("stop-poll-btn");
+    const sessionEl = document.getElementById("session-id");
+    const nodesBody = document.getElementById("nodes-body");
+    const answerEl = document.getElementById("answer");
+    const computerEl = document.getElementById("computer-meta");
+    const runErrorEl = document.getElementById("run-error");
+    const healthEl = document.getElementById("health");
+    const desktopEl = document.getElementById("desktop-view");
+    const liveFrameEl = document.getElementById("live-frame");
+    const framePlaceholderEl = document.getElementById("frame-placeholder");
+    const windowListEl = document.getElementById("window-list");
+    const chipAppEl = document.getElementById("chip-app");
+    const chipGoalEl = document.getElementById("chip-goal");
+    const chipPathEl = document.getElementById("chip-path");
+    const chipTurnEl = document.getElementById("chip-turn");
+    const refreshWindowsBtn = document.getElementById("refresh-windows-btn");
+    const manualControlEl = document.getElementById("manual-control");
+    const manualBannerEl = document.getElementById("manual-banner");
+    const clickStatusEl = document.getElementById("click-status");
+    const frameWrapEl = document.getElementById("frame-wrap");
+
+    let activePreset = null;
+    let pollTimer = null;
+    let currentSession = null;
+    let lastFrameMtime = null;
+    let lastLive = null;
+    let sessionStatus = null;
+    let pickedWindow = null;
+    let manualControl = false;
+    let clickInFlight = false;
+
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function skillClass(skill) {
+      if (skill === "planner") return "skill-planner";
+      if (skill === "computer") return "skill-computer";
+      if (skill === "formatter") return "skill-formatter";
+      return "";
+    }
+
+    async function loadHealth() {
+      try {
+        const r = await fetch("/api/health");
+        const d = await r.json();
+        healthEl.innerHTML = "";
+        const items = [
+          ["Gateway", d.gateway, "ok"],
+          ["Vision", d.vision, d.vision && d.vision.ok ? "vision-ok" : "vision-bad"],
+          ["cua-driver", d.cua_driver, "ok"],
+        ];
+        for (const [key, val, okCls] of items) {
+          const span = document.createElement("span");
+          const isOk = val && val.ok;
+          span.className = "pill " + (isOk ? okCls : "bad");
+          span.textContent = key + ": " + (isOk ? "OK" : "down");
+          healthEl.appendChild(span);
+        }
+      } catch (e) {
+        healthEl.textContent = "Health check failed";
+      }
+    }
+
+    async function loadPresets() {
+      const r = await fetch("/api/presets");
+      const d = await r.json();
+      presetsEl.innerHTML = "";
+      (d.presets || []).forEach((p) => {
+        const card = document.createElement("div");
+        card.className = "preset";
+        card.dataset.id = p.id;
+        if (p.layer) card.dataset.layer = p.layer;
+        card.innerHTML =
+          '<div class="label">' + escapeHtml(p.label) + "</div>" +
+          (p.hint ? '<div class="hint">' + escapeHtml(p.hint) + "</div>" : "") +
+          (p.prereq ? '<div class="prereq">' + escapeHtml(p.prereq) + "</div>" : "");
+        card.addEventListener("click", () => selectPreset(p, card));
+        presetsEl.appendChild(card);
+      });
+    }
+
+    function selectPreset(p, card) {
+      activePreset = p.id;
+      queryEl.value = p.query || "";
+      document.querySelectorAll(".preset").forEach((el) => el.classList.remove("active"));
+      card.classList.add("active");
+    }
+
+    function renderNodes(nodes) {
+      if (!nodes || !nodes.length) {
+        nodesBody.innerHTML = '<tr><td colspan="4" style="color:var(--muted)">Waiting for nodes...</td></tr>';
+        return;
+      }
+      nodesBody.innerHTML = nodes.map((n) => {
+        const st = n.status || "pending";
+        const sk = n.skill || "";
+        let detail = "";
+        if (n.computer) {
+          detail = "path=" + (n.computer.path || "?");
+          if (n.computer.result) detail += " result=" + String(n.computer.result).slice(0, 60);
+        }
+        if (n.error && st === "failed") {
+          detail = detail ? detail + " — " + n.error.slice(0, 100) : n.error.slice(0, 120);
+        } else if (!detail && n.error) {
+          detail = n.error.slice(0, 80);
+        } else if (sk === "formatter" && n.final_answer) {
+          detail = "final_answer ready";
+        }
+        const rowCls = st === "running" ? ' class="row-running"' : "";
+        return "<tr" + rowCls + ">" +
+          "<td>" + escapeHtml(n.id) + "</td>" +
+          '<td><span class="skill-badge ' + skillClass(sk) + '">' +
+          '<span class="skill-dot"></span>' + escapeHtml(sk) + "</span></td>" +
+          '<td class="status-' + escapeHtml(st) + '">' + escapeHtml(st) + "</td>" +
+          "<td>" + escapeHtml(detail) + "</td></tr>";
+      }).join("");
+    }
+
+    function effectiveTarget() {
+      if (pickedWindow && pickedWindow.pid && pickedWindow.window_id) {
+        return pickedWindow;
+      }
+      if (lastLive && lastLive.target_pid && lastLive.target_window_id) {
+        return { pid: lastLive.target_pid, window_id: lastLive.target_window_id };
+      }
+      if (lastLive && lastLive.windows) {
+        const t = lastLive.windows.find((w) => w.is_target);
+        if (t && t.pid && t.window_id) {
+          return { pid: t.pid, window_id: t.window_id };
+        }
+      }
+      return null;
+    }
+
+    function updateManualControlUi() {
+      const running = sessionStatus === "running";
+      if (running && !manualControl) {
+        manualControlEl.disabled = true;
+        manualBannerEl.hidden = false;
+        manualBannerEl.textContent =
+          "Agent is running — enable Manual control to click (may interfere with the agent).";
+      } else if (running && manualControl) {
+        manualControlEl.disabled = false;
+        manualBannerEl.hidden = false;
+        manualBannerEl.textContent =
+          "Agent is running; manual clicks may interfere with automation.";
+      } else {
+        manualControlEl.disabled = false;
+        manualBannerEl.hidden = !manualControl;
+        manualBannerEl.textContent = manualControl
+          ? "Click the screenshot to send a click to the target window."
+          : "";
+      }
+      liveFrameEl.classList.toggle("manual", manualControl && !liveFrameEl.hidden);
+    }
+
+    function showClickMarker(displayX, displayY) {
+      const old = frameWrapEl.querySelector(".click-marker");
+      if (old) old.remove();
+      const m = document.createElement("div");
+      m.className = "click-marker";
+      m.style.left = displayX + "px";
+      m.style.top = displayY + "px";
+      frameWrapEl.appendChild(m);
+      setTimeout(() => m.remove(), 1200);
+    }
+
+    async function refreshSnapshot(pid, windowId) {
+      const url = "/api/desktop/snapshot?pid=" + encodeURIComponent(pid) +
+        "&window_id=" + encodeURIComponent(windowId) + "&t=" + Date.now();
+      liveFrameEl.src = url;
+      liveFrameEl.hidden = false;
+      framePlaceholderEl.hidden = true;
+      lastFrameMtime = Date.now();
+    }
+
+    async function handleFrameClick(ev) {
+      if (!manualControl || clickInFlight || liveFrameEl.hidden) return;
+      const target = effectiveTarget();
+      if (!target) {
+        clickStatusEl.textContent = "Pick a target window from the list first.";
+        return;
+      }
+      const rect = liveFrameEl.getBoundingClientRect();
+      const naturalW = liveFrameEl.naturalWidth || lastLive?.frame_width || rect.width;
+      const naturalH = liveFrameEl.naturalHeight || lastLive?.frame_height || rect.height;
+      if (!naturalW || !naturalH) return;
+      const clickX = ev.clientX - rect.left;
+      const clickY = ev.clientY - rect.top;
+      const x = Math.round((clickX / rect.width) * naturalW);
+      const y = Math.round((clickY / rect.height) * naturalH);
+      const wrapRect = frameWrapEl.getBoundingClientRect();
+      showClickMarker(ev.clientX - wrapRect.left, ev.clientY - wrapRect.top);
+      clickInFlight = true;
+      clickStatusEl.textContent = "Clicking (" + x + ", " + y + ")…";
+      try {
+        const r = await fetch("/api/desktop/click", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            pid: target.pid,
+            window_id: target.window_id,
+            x: x,
+            y: y,
+          }),
+        });
+        if (!r.ok) {
+          const err = await r.text();
+          throw new Error(err || r.statusText);
+        }
+        clickStatusEl.textContent = "Clicked (" + x + ", " + y + ")";
+        await refreshSnapshot(target.pid, target.window_id);
+      } catch (e) {
+        clickStatusEl.textContent = "Click failed: " + String(e).slice(0, 120);
+      } finally {
+        clickInFlight = false;
+      }
+    }
+
+    function renderWindows(windows) {
+      if (!windows || !windows.length) {
+        windowListEl.innerHTML = '<li style="color:var(--muted)">No windows listed</li>';
+        return;
+      }
+      windowListEl.innerHTML = windows.map((w, i) => {
+        const classes = [];
+        if (w.is_target) classes.push("target");
+        if (pickedWindow && pickedWindow.pid === w.pid && pickedWindow.window_id === w.window_id) {
+          classes.push("selected");
+        }
+        const cls = classes.length ? ' class="' + classes.join(" ") + '"' : "";
+        return "<li" + cls + ' data-idx="' + i + '">' +
+          '<div class="win-title">' + escapeHtml(w.title || "(untitled)") + "</div>" +
+          '<div class="win-app">' + escapeHtml(w.app_name || "") +
+          (w.pid ? " · pid " + w.pid : "") + "</div></li>";
+      }).join("");
+      windowListEl.querySelectorAll("li[data-idx]").forEach((li) => {
+        li.addEventListener("click", () => {
+          const idx = parseInt(li.dataset.idx, 10);
+          const w = windows[idx];
+          if (!w || !w.pid || !w.window_id) return;
+          pickedWindow = { pid: w.pid, window_id: w.window_id };
+          clickStatusEl.textContent = "Target: " + (w.title || w.app_name || "window");
+          renderWindows(windows);
+          if (manualControl) {
+            refreshSnapshot(w.pid, w.window_id).catch(() => {});
+          }
+        });
+      });
+    }
+
+    function renderLive(live) {
+      if (!live) return;
+      lastLive = live;
+      desktopEl.hidden = false;
+      sessionStatus = live.status || sessionStatus;
+
+      if (live.target_app) {
+        chipAppEl.hidden = false;
+        chipAppEl.textContent = "Target: " + live.target_app;
+      } else {
+        chipAppEl.hidden = true;
+      }
+      if (live.target_goal) {
+        chipGoalEl.hidden = false;
+        chipGoalEl.textContent = live.target_goal;
+        chipGoalEl.title = live.target_goal;
+      } else {
+        chipGoalEl.hidden = true;
+      }
+      if (live.path) {
+        chipPathEl.hidden = false;
+        chipPathEl.textContent = "path=" + live.path;
+      } else {
+        chipPathEl.hidden = true;
+      }
+      if (live.frame_turn) {
+        chipTurnEl.hidden = false;
+        chipTurnEl.textContent = live.frame_turn;
+      } else {
+        chipTurnEl.hidden = true;
+      }
+
+      renderWindows(live.windows);
+
+      if (live.frame_available && currentSession) {
+        const mtime = live.frame_mtime || Date.now();
+        if (mtime !== lastFrameMtime) {
+          lastFrameMtime = mtime;
+          liveFrameEl.src = "/api/sessions/" + encodeURIComponent(currentSession) +
+            "/frame?t=" + mtime;
+        }
+        liveFrameEl.hidden = false;
+        framePlaceholderEl.hidden = true;
+      } else if (live.target_app) {
+        liveFrameEl.hidden = true;
+        framePlaceholderEl.hidden = false;
+        framePlaceholderEl.textContent = "No screenshot yet — computer skill running…";
+      } else {
+        liveFrameEl.hidden = true;
+        framePlaceholderEl.hidden = false;
+        framePlaceholderEl.textContent = "Waiting for computer skill…";
+      }
+      updateManualControlUi();
+    }
+
+    async function pollLive(sid) {
+      try {
+        const r = await fetch("/api/sessions/" + encodeURIComponent(sid) + "/live");
+        if (!r.ok) return;
+        renderLive(await r.json());
+      } catch (e) { /* ignore */ }
+    }
+
+    async function pollSession(sid) {
+      const r = await fetch("/api/sessions/" + encodeURIComponent(sid));
+      if (!r.ok) return;
+      const d = await r.json();
+      sessionStatus = d.status;
+      renderNodes(d.nodes);
+      if (d.answer) answerEl.textContent = d.answer;
+      if (d.computer) {
+        computerEl.hidden = false;
+        const t = d.computer.trajectory_dir || "";
+        computerEl.innerHTML =
+          "<strong>Computer</strong> path=<code>" + escapeHtml(d.computer.path || "") + "</code>" +
+          (d.computer.result ? " result=<code>" + escapeHtml(String(d.computer.result)) + "</code>" : "") +
+          (t ? '<br>Trajectory: <code>' + escapeHtml(t) + "</code>" : "");
+      }
+      if (d.status === "running" || d.computer || d.target_app) {
+        await pollLive(sid);
+      }
+      if (d.status === "failed" && d.error) {
+        runErrorEl.textContent = d.error;
+        stopPolling();
+      }
+      if (d.status === "complete") {
+        runErrorEl.textContent = "";
+        stopPolling();
+        runBtn.disabled = false;
+        await pollLive(sid);
+      }
+    }
+
+    function startPolling(sid) {
+      stopPolling();
+      currentSession = sid;
+      lastFrameMtime = null;
+      lastLive = null;
+      pickedWindow = null;
+      sessionStatus = "running";
+      sessionEl.textContent = "session: " + sid;
+      stopPollBtn.disabled = false;
+      desktopEl.hidden = false;
+      framePlaceholderEl.textContent = "Starting…";
+      liveFrameEl.hidden = true;
+      framePlaceholderEl.hidden = false;
+      pollTimer = setInterval(() => pollSession(sid), 1500);
+      pollSession(sid);
+    }
+
+    function stopPolling() {
+      if (pollTimer) {
+        clearInterval(pollTimer);
+        pollTimer = null;
+      }
+      stopPollBtn.disabled = true;
+    }
+
+    refreshWindowsBtn.addEventListener("click", async () => {
+      if (currentSession) {
+        await pollLive(currentSession);
+      } else {
+        try {
+          const r = await fetch("/api/desktop/windows");
+          const d = await r.json();
+          renderWindows(d.windows);
+          desktopEl.hidden = false;
+        } catch (e) { /* ignore */ }
+      }
+    });
+
+    runBtn.addEventListener("click", async () => {
+      const q = queryEl.value.trim();
+      if (!q) {
+        runErrorEl.textContent = "Enter a query or select a preset.";
+        return;
+      }
+      runBtn.disabled = true;
+      runErrorEl.textContent = "";
+      answerEl.textContent = "Running...";
+      computerEl.hidden = true;
+      chipAppEl.hidden = true;
+      chipGoalEl.hidden = true;
+      chipPathEl.hidden = true;
+      chipTurnEl.hidden = true;
+      nodesBody.innerHTML = '<tr><td colspan="4" style="color:var(--muted)">Starting...</td></tr>';
+      try {
+        const r = await fetch("/api/run", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query: q }),
+        });
+        if (!r.ok) throw new Error(await r.text());
+        const d = await r.json();
+        startPolling(d.session_id);
+      } catch (e) {
+        runErrorEl.textContent = String(e);
+        runBtn.disabled = false;
+      }
+    });
+
+    stopPollBtn.addEventListener("click", stopPolling);
+
+    manualControlEl.addEventListener("change", () => {
+      if (sessionStatus === "running" && manualControlEl.checked) {
+        const ok = window.confirm(
+          "The agent is still running. Manual clicks may interfere. Enable anyway?"
+        );
+        if (!ok) {
+          manualControlEl.checked = false;
+          return;
+        }
+      }
+      manualControl = manualControlEl.checked;
+      updateManualControlUi();
+      if (manualControl) {
+        const t = effectiveTarget();
+        if (t) {
+          refreshSnapshot(t.pid, t.window_id).catch(() => {
+            clickStatusEl.textContent = "Could not fetch snapshot for target window.";
+          });
+        }
+      }
+    });
+
+    liveFrameEl.addEventListener("click", handleFrameClick);
+
+    loadHealth();
+    loadPresets();
+    setInterval(loadHealth, 30000);
+  </script>
+</body>
+</html>
