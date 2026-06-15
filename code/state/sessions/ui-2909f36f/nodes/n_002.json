@@ -1,0 +1,124 @@
+{
+  "node_id": "n:2",
+  "skill": "computer",
+  "status": "complete",
+  "inputs": [
+    "USER_QUERY"
+  ],
+  "result": {
+    "success": true,
+    "agent_name": "computer",
+    "output": {
+      "app": "Calculator",
+      "goal": "Compute 847 times 293 and return the displayed result.",
+      "path": "hotkey",
+      "turns": 0,
+      "result": "248171",
+      "actions": [
+        {
+          "tool": "launch_app",
+          "args": {
+            "name": "Calculator"
+          },
+          "result": {
+            "active": false,
+            "bundle_id": "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App",
+            "name": "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App",
+            "pid": 36672,
+            "running": true,
+            "windows": [
+              {
+                "bounds": {
+                  "height": 760,
+                  "width": 484,
+                  "x": 0,
+                  "y": 41
+                },
+                "is_on_screen": true,
+                "layer": 0,
+                "title": "Calculator",
+                "window_id": 6424820,
+                "z_index": 0
+              }
+            ]
+          }
+        },
+        {
+          "tool": "type_text",
+          "args": {
+            "text": "847*293=",
+            "pid": 3492,
+            "window_id": 12651150
+          },
+          "result": {
+            "actions": [
+              {
+                "char": "8",
+                "element_index": 32
+              },
+              {
+                "char": "4",
+                "element_index": 28
+              },
+              {
+                "char": "7",
+                "element_index": 31
+              },
+              {
+                "char": "*",
+                "element_index": 20
+              },
+              {
+                "char": "2",
+                "element_index": 26
+              },
+              {
+                "char": "9",
+                "element_index": 33
+              },
+              {
+                "char": "3",
+                "element_index": 27
+              },
+              {
+                "char": "=",
+                "element_index": 23
+              }
+            ],
+            "snapshot": {
+              "element_count": 38,
+              "pid": 3492,
+              "tree_markdown": "- Window \"Calculator\"\n  - [0] Window \"Calculator\" [value=\"Calculator\" id=TitleBar actions=[set_value]]\n    - MenuBar \"System\"\n      - [1] MenuItem \"System\" [actions=[expand]]\n    - [2] Button \"Minimize Calculator\" [id=Minimize actions=[invoke]]\n    - [3] Button \"Maximize Calculator\" [id=Maximize actions=[invoke]]\n    - [4] Button \"Close Calculator\" [id=Close actions=[invoke]]\n  - Window \"Calculator\"\n    - [5] Text \"Calculator\" [id=AppName actions=[text]]\n      - [6] Button \"Open Navigation\" [id=TogglePaneButton actions=[invoke]]\n        - Text \"Expression is 847 × 293=\"\n        - [7] Text \"Display is 2,48,171\" [id=CalculatorResults actions=[invoke]]\n        - [8] Button \"Open history flyout\" [id=HistoryButton actions=[invoke]]\n        - Group \"Memory controls\"\n          - Button \"Clear all memory\"\n          - Button \"Memory recall\"\n          - [9] Button \"Memory add\" [id=MemPlus actions=[invoke]]\n          - [10] Button \"Memory subtract\" [id=MemMinus actions=[invoke]]\n          - [11] Button \"Memory store\" [id=memButton actions=[invoke]]\n          - Button \"Open memory flyout\"\n        - Group \"Display controls\"\n          - [12] Button \"Percent\" [id=percentButton actions=[invoke]]\n          - [13] Button \"Clear entry\" [id=clearEntryButton actions=[invoke]]\n          - [14] Button \"Clear\" [id=clearButton actions=[invoke]]\n          - [15] Button \"Backspace\" [id=backSpaceButton actions=[invoke]]\n        - Group \"Standard functions\"\n          - [16] Button \"Reciprocal\" [id=invertButton actions=[invoke]]\n          - [17] Button \"Square\" [id=xpower2Button actions=[invoke]]\n          - [18] Button \"Square root\" [id=squareRootButton actions=[invoke]]\n        - Group \"Standard operators\"\n          - [19] Button \"Divide by\" [id=divideButton actions=[invoke]]\n          - [20] Button \"Multiply by\" [id=multiplyButton actions=[invoke]]\n          - [21] Button \"Minus\" [id=minusButton actions=[invoke]]\n          - [22] Button \"Plus\" [id=plusButton actions=[invoke]]\n          - [23] Button \"Equals\" [id=equalButton actions=[invoke]]\n        - Group \"Number pad\"\n          - [24] Button \"Zero\" [id=num0Button actions=[invoke]]\n          - [25] Button \"One\" [id=num1Button actions=[invoke]]\n          - [26] Button \"Two\" [id=num2Button actions=[invoke]]\n          - [27] Button \"Three\" [id=num3Button actions=[invoke]]\n          - [28] Button \"Four\" [id=num4Button actions=[invoke]]\n          - [29] Button \"Five\" [id=num5Button actions=[invoke]]\n          - [30] Button \"Six\" [id=num6Button actions=[invoke]]\n          - [31] Button \"Seven\" [id=num7Button actions=[invoke]]\n          - [32] Button \"Eight\" [id=num8Button actions=[invoke]]\n          - [33] Button \"Nine\" [id=num9Button actions=[invoke]]\n          - [34] Button \"Decimal separator\" [id=decimalSeparatorButton actions=[invoke]]\n        - [35] Button \"Positive negative\" [id=negateButton actions=[invoke]]\n      - [36] Text \"Standard Calculator mode\" [id=Header actions=[text]]\n      - [37] Button \"Keep on top\" [id=NormalAlwaysOnTopButton actions=[invoke]]\n",
+              "window_id": 12651150
+            }
+          }
+        },
+        {
+          "tool": "get_window_state",
+          "args": {
+            "pid": 3492,
+            "window_id": 12651150
+          },
+          "result": {
+            "element_count": 38,
+            "pid": 3492,
+            "tree_markdown": "- Window \"Calculator\"\n  - [0] Window \"Calculator\" [value=\"Calculator\" id=TitleBar actions=[set_value]]\n    - MenuBar \"System\"\n      - [1] MenuItem \"System\" [actions=[expand]]\n    - [2] Button \"Minimize Calculator\" [id=Minimize actions=[invoke]]\n    - [3] Button \"Maximize Calculator\" [id=Maximize actions=[invoke]]\n    - [4] Button \"Close Calculator\" [id=Close actions=[invoke]]\n  - Window \"Calculator\"\n    - [5] Text \"Calculator\" [id=AppName actions=[text]]\n      - [6] Button \"Open Navigation\" [id=TogglePaneButton actions=[invoke]]\n        - Text \"Expression is 847 × 293=\"\n        - [7] Text \"Display is 2,48,171\" [id=CalculatorResults actions=[invoke]]\n        - [8] Button \"Open history flyout\" [id=HistoryButton actions=[invoke]]\n        - Group \"Memory controls\"\n          - Button \"Clear all memory\"\n          - Button \"Memory recall\"\n          - [9] Button \"Memory add\" [id=MemPlus actions=[invoke]]\n          - [10] Button \"Memory subtract\" [id=MemMinus actions=[invoke]]\n          - [11] Button \"Memory store\" [id=memButton actions=[invoke]]\n          - Button \"Open memory flyout\"\n        - Group \"Display controls\"\n          - [12] Button \"Percent\" [id=percentButton actions=[invoke]]\n          - [13] Button \"Clear entry\" [id=clearEntryButton actions=[invoke]]\n          - [14] Button \"Clear\" [id=clearButton actions=[invoke]]\n          - [15] Button \"Backspace\" [id=backSpaceButton actions=[invoke]]\n        - Group \"Standard functions\"\n          - [16] Button \"Reciprocal\" [id=invertButton actions=[invoke]]\n          - [17] Button \"Square\" [id=xpower2Button actions=[invoke]]\n          - [18] Button \"Square root\" [id=squareRootButton actions=[invoke]]\n        - Group \"Standard operators\"\n          - [19] Button \"Divide by\" [id=divideButton actions=[invoke]]\n          - [20] Button \"Multiply by\" [id=multiplyButton actions=[invoke]]\n          - [21] Button \"Minus\" [id=minusButton actions=[invoke]]\n          - [22] Button \"Plus\" [id=plusButton actions=[invoke]]\n          - [23] Button \"Equals\" [id=equalButton actions=[invoke]]\n        - Group \"Number pad\"\n          - [24] Button \"Zero\" [id=num0Button actions=[invoke]]\n          - [25] Button \"One\" [id=num1Button actions=[invoke]]\n          - [26] Button \"Two\" [id=num2Button actions=[invoke]]\n          - [27] Button \"Three\" [id=num3Button actions=[invoke]]\n          - [28] Button \"Four\" [id=num4Button actions=[invoke]]\n          - [29] Button \"Five\" [id=num5Button actions=[invoke]]\n          - [30] Button \"Six\" [id=num6Button actions=[invoke]]\n          - [31] Button \"Seven\" [id=num7Button actions=[invoke]]\n          - [32] Button \"Eight\" [id=num8Button actions=[invoke]]\n          - [33] Button \"Nine\" [id=num9Button actions=[invoke]]\n          - [34] Button \"Decimal separator\" [id=decimalSeparatorButton actions=[invoke]]\n        - [35] Button \"Positive negative\" [id=negateButton actions=[invoke]]\n      - [36] Text \"Standard Calculator mode\" [id=Header actions=[text]]\n      - [37] Button \"Keep on top\" [id=NormalAlwaysOnTopButton actions=[invoke]]\n",
+            "window_id": 12651150
+          }
+        }
+      ],
+      "trajectory_dir": "C:\\Users\\Padmanabh\\OneDrive\\Documents\\S10_Comp_Desktop\\code\\state\\sessions\\ui-2909f36f\\computer\\trajectory_1781526344"
+    },
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 27.107219696044922,
+    "provider": "",
+    "error": null,
+    "error_code": null
+  },
+  "prompt_sent": "# Computer skill (Session 10)\n\nYou are the **Computer** skill. The orchestrator invokes you with `metadata.app` and `metadata.goal`. You do not emit JSON successors â€” the cascade runs in Python via cua-driver.\n\n## Output contract (`ComputerOutput`)\n\nThe runtime returns:\n\n```json\n{\n  \"app\": \"Calculator\",\n  \"goal\": \"...\",\n  \"path\": \"read | hotkey | electron | ax | vision\",\n  \"turns\": 0,\n  \"result\": \"...\",\n  \"actions\": [],\n  \"trajectory_dir\": \"state/sessions/.../computer/trajectory_<ts>\"\n}\n```\n\n- `path` â€” which cascade layer succeeded (visible in replay).\n- `trajectory_dir` â€” cua-driver `start_recording` evidence (submit this directory).\n\n## Cascade layers (five)\n\n1. **read** â€” AX snapshot only, no LLM.\n2. **hotkey** â€” deterministic `hotkey_script` (Calculator arithmetic).\n3. **electron** â€” `electron_debugging_port` + cua `page` tool (Cursor/VS Code).\n4. **ax** â€” element_index loop + text LLM.\n5. **vision** â€” screenshot + vision LLM + pixel clicks.\n\nEscalation stops at the first layer that satisfies the goal.\n\n## Metadata\n\n| Field | Required | Purpose |\n|-------|----------|---------|\n| `app` | yes | Target app name (`Calculator`, `Cursor`, `browser` for canvas fixture) |\n| `goal` | yes | Verifiable task description |\n| `hotkey_script` | no | List of `{tool, args}` cua-driver steps (Layer 2a) |\n| `electron_debugging_port` | no | CDP port for Electron apps (Layer 2b electron) |\n| `force_path` | no | Pin layer: `read`, `hotkey`, `electron`, `ax`, `vision` |\n\n## Canvas fixture\n\nFor goals mentioning \"canvas fixture\" or \"red circle\", use `app: browser`.\nThe runtime opens `computer/fixtures/canvas_only.html` via cua-driver and\nuses the **vision** layer. Do not invent app names (e.g. CanvasFixtureApp).\n\n## Prerequisites\n\n- `cua-driver` installed: `code/scripts/setup_cua_driver.ps1`\n- Gateway V10 on `:8110`\n- For Cursor tasks: `computer/scripts/launch_cursor_debug.ps1` first\n\n## Errors\n\n- `interaction_failed` â€” all layers exhausted\n- `app_not_found` â€” cua-driver missing or app did not launch\n\nUSER_QUERY: Open Calculator and compute 847 times 293. Return the displayed result.\n\nMEMORY HITS (8 from FAISS):\n  - [tool_outcome] Compute 847 times 293 using Calculator.\n      source: user_query\n      raw: Open Calculator and compute 847 times 293. Return the displayed result.\n  - [fact] Compare 3 laptops under ₹80,000.\n      source: user_query\n      raw: Compare 3 laptops under ₹80,000.\n  - [fact] Compare 3 laptops under ₹80,000.\n      source: user_query\n      raw: Compare 3 laptops under ₹80,000.\n  - [fact] Compare 3 laptops under Rs 80000\n      source: user_query\n      raw: Compare 3 laptops under Rs 80000\n  - [tool_outcome] Open the canvas fixture and click inside the red circle on the canvas.\n      source: user_query\n      raw: Open the canvas fixture and click inside the red circle on the canvas.\n  - [tool_outcome] Open the canvas fixture and click inside the red circle.\n      source: user_query\n      raw: Open the canvas fixture and click inside the red circle on the canvas.\n  - [fact] Compare 5 AI coding tools: Cursor, GitHub Copilot, Codeium, Tabnine, Amazon Q Developer by free and paid plans.\n      source: user_query\n  - [fact] Comparison of GitHub Copilot, Codeium, and Tabnine free vs paid plans.\n      source: user_query\n      raw: Compare GitHub Copilot, Codeium, and Tabnine free vs paid plans. Use browser on each tool's official pricing page with at least 3 visible actions per site (navigate, click pricing or expand plan details, scroll). Include a structured comparison table.\n\nINPUTS:\n[\n  {\n    \"id\": \"USER_QUERY\",\n    \"kind\": \"query\",\n    \"value\": \"Open Calculator and compute 847 times 293. Return the displayed result.\"\n  }\n]",
+  "started_at": 1781526344.682739,
+  "completed_at": 1781526371.7899587,
+  "retries": 0
+}

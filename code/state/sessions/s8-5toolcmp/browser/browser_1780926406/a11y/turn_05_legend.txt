@@ -1,0 +1,13 @@
+[1]<a role="button">AI & ML</a>
+[2]<a role="button">Developer skills</a>
+[3]<a role="button">Engineering</a>
+[4]<a role="button">Enterprise software</a>
+[5]<a role="button">News & insights</a>
+[6]<a role="button">Open Source</a>
+[7]<a role="button">Security</a>
+[8]<a>Why we’re making this change</a>
+[9]<a>What’s changing</a>
+[10]<a>What this means for individuals</a>
+[11]<a>What this means for businesses and enterprises</a>
+[12]<a>The bottom line</a>
+[13]<button>Close image</button>

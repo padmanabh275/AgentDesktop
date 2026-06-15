@@ -1,0 +1,9 @@
+[1]<input></input>
+[2]<input></input>
+[3]<input></input>
+[4]<input></input>
+[5]<input></input>
+[6]<input></input>
+[7]<button>Verify</button>
+[8]<button>Resend code</button>
+[9]<button>Back to Log in</button>

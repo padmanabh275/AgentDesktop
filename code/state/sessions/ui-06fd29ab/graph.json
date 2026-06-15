@@ -1,0 +1,252 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Use the computer skill to create the specified notes file in Cursor.",
+          "nodes": [
+            {
+              "skill": "computer",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "cursor",
+                "app": "Cursor",
+                "goal": "Create notes/s10_evidence.txt containing: Computer-Use Layer2b OK"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:cursor"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "computer",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "cursor",
+              "app": "Cursor",
+              "goal": "Create notes/s10_evidence.txt containing: Computer-Use Layer2b OK"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:cursor"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 8.646394968032837,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "computer",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "cursor",
+        "app": "Cursor",
+        "goal": "Create notes/s10_evidence.txt containing: Computer-Use Layer2b OK"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "computer",
+        "output": {
+          "app": "Cursor",
+          "goal": "Create notes/s10_evidence.txt containing: Computer-Use Layer2b OK",
+          "path": "vision",
+          "turns": 0,
+          "result": null,
+          "actions": [],
+          "trajectory_dir": "C:\\Users\\Padmanabh\\OneDrive\\Documents\\S10_Comp_Desktop\\code\\state\\sessions\\ui-06fd29ab\\computer\\trajectory_1781529964"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 136.28535556793213,
+        "provider": "",
+        "error": "no window for vision layer",
+        "error_code": "interaction_failed"
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:3"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "node=n:2 skill=computer reason=upstream_failure error=no window for vision layer",
+        "recovers": "n:2",
+        "recovery_reason": "upstream_failure",
+        "prior_complete": []
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Retry creating the note in Cursor with a different approach since the previous attempt failed due to a vision layer issue.",
+          "nodes": [
+            {
+              "skill": "computer",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "cursorRetry",
+                "app": "Cursor",
+                "goal": "Create notes/s10_evidence.txt containing: Computer-Use Layer2b OK using keyboard shortcuts."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:cursorRetry"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "computer",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "cursorRetry",
+              "app": "Cursor",
+              "goal": "Create notes/s10_evidence.txt containing: Computer-Use Layer2b OK using keyboard shortcuts."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:cursorRetry"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 6.062090158462524,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:4"
+    },
+    {
+      "skill": "computer",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "cursorRetry",
+        "app": "Cursor",
+        "goal": "Create notes/s10_evidence.txt containing: Computer-Use Layer2b OK using keyboard shortcuts."
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "computer",
+        "output": {
+          "app": "Cursor",
+          "goal": "Create notes/s10_evidence.txt containing: Computer-Use Layer2b OK using keyboard shortcuts.",
+          "path": "electron",
+          "turns": 0,
+          "result": null,
+          "actions": [],
+          "trajectory_dir": "C:\\Users\\Padmanabh\\OneDrive\\Documents\\S10_Comp_Desktop\\code\\state\\sessions\\ui-06fd29ab\\computer\\trajectory_1781530108"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 19.56201410293579,
+        "provider": "",
+        "error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8110/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "error_code": "interaction_failed"
+      },
+      "_result_typed": true,
+      "id": "n:5"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:5"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:6"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    },
+    {
+      "source": "n:5",
+      "target": "n:6"
+    }
+  ]
+}

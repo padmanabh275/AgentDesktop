@@ -1,0 +1,128 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Open the HTML canvas fixture and click the red circle.",
+          "nodes": [
+            {
+              "skill": "computer",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "canvas",
+                "app": "browser",
+                "goal": "Open the canvas fixture and click inside the red circle on the canvas."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:canvas"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "computer",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "canvas",
+              "app": "browser",
+              "goal": "Open the canvas fixture and click inside the red circle on the canvas."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:canvas"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 5.943312644958496,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "computer",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "canvas",
+        "app": "browser",
+        "goal": "Open the canvas fixture and click inside the red circle on the canvas."
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "computer",
+        "output": {
+          "app": "browser",
+          "goal": "Open the canvas fixture and click inside the red circle on the canvas.",
+          "path": "read",
+          "turns": 0,
+          "result": null,
+          "actions": [],
+          "trajectory_dir": "C:\\Users\\Padmanabh\\OneDrive\\Documents\\S10_Comp_Desktop\\code\\state\\sessions\\ui-7767fdfa\\computer\\trajectory_1781520422"
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 39.959996938705444,
+        "provider": "",
+        "error": "HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8110/v1/vision'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "error_code": "interaction_failed"
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[1]<a>GitHub homepage</a>
+[2]<a>Blog</a>
+[3]<a>Changelog</a>
+[4]<a>Docs</a>
+[5]<a>Customer stories</a>
+[6]<button>Toggle search</button>
+[7]<a>Try GitHub Copilot CLI</a>
+[8]<a>Attend GitHub Universe</a>
+[9]<a role="button">AI & ML</a>
+[10]<a role="button">Developer skills</a>
+[11]<a role="button">Engineering</a>
+[12]<a role="button">Enterprise software</a>
+[13]<a role="button">News & insights</a>
+[14]<a role="button">Open Source</a>
+[15]<a role="button">Security</a>
+[16]<a>Home</a>
+[17]<a>News & insights</a>
+[18]<a>Company news</a>

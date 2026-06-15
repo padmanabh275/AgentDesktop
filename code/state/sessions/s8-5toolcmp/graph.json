@@ -1,0 +1,24 @@
+{
+  "directed": true,
+  "session_id": "s8-5toolcmp",
+  "query": "Compare 5 AI coding tools by free plan and paid plan. The agent must perform at least three visible browser actions.",
+  "planner_dag": {
+    "rationale": "Fan-out browser nodes per tool (official pricing pages) → distiller per tool → formatter comparison table.",
+    "nodes": [
+      {"id": "n:1", "skill": "planner", "inputs": ["USER_QUERY"]},
+      {"id": "n:2", "skill": "browser", "label": "bCursor", "url": "https://cursor.com/pricing"},
+      {"id": "n:3", "skill": "browser", "label": "bCopilot", "url": "https://github.com/features/copilot/plans"},
+      {"id": "n:4", "skill": "browser", "label": "bCodeium", "url": "https://windsurf.com/pricing"},
+      {"id": "n:5", "skill": "browser", "label": "bTabnine", "url": "https://www.tabnine.com/pricing"},
+      {"id": "n:6", "skill": "browser", "label": "bAmazonQ", "url": "https://aws.amazon.com/q/developer/pricing/"},
+      {"id": "n:7", "skill": "distiller", "inputs": ["n:2","n:3","n:4","n:5","n:6"]},
+      {"id": "n:8", "skill": "formatter", "inputs": ["USER_QUERY", "n:7"]}
+    ],
+    "edges": [
+      ["n:1", "n:2"], ["n:1", "n:3"], ["n:1", "n:4"], ["n:1", "n:5"], ["n:1", "n:6"],
+      ["n:2", "n:7"], ["n:3", "n:7"], ["n:4", "n:7"], ["n:5", "n:7"], ["n:6", "n:7"],
+      ["n:7", "n:8"]
+    ]
+  },
+  "execution_note": "Browsers executed sequentially (session s8-5toolcmp) after parallel orchestrator runs hit gateway 503/Unicode errors."
+}

@@ -1,0 +1,319 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Process USER_QUERY and generate a structured comparison table for AI coding tools.",
+          "nodes": [
+            {
+              "skill": "browser",
+              "inputs": [
+                "n:compare_5_ai_tools",
+                "n:3"
+              ],
+              "metadata": {
+                "url": "https://www.cursor.ai/pricing",
+                "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+              }
+            },
+            {
+              "skill": "browser",
+              "inputs": [
+                "n:compare_5_ai_tools",
+                "n:4"
+              ],
+              "metadata": {
+                "url": "https://github.com/copilot/github-copilot",
+                "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+              }
+            },
+            {
+              "skill": "browser",
+              "inputs": [
+                "n:compare_5_ai_tools",
+                "n:5"
+              ],
+              "metadata": {
+                "url": "https://codeium.com/pricing",
+                "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+              }
+            },
+            {
+              "skill": "browser",
+              "inputs": [
+                "n:compare_5_ai_tools",
+                "n:6"
+              ],
+              "metadata": {
+                "url": "https://tabnine.ai/pricing",
+                "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+              }
+            },
+            {
+              "skill": "browser",
+              "inputs": [
+                "n:compare_5_ai_tools",
+                "n:7"
+              ],
+              "metadata": {
+                "url": "https://aws.amazon.com/bots-federation/pricing",
+                "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:compare_5_ai_tools"
+              ],
+              "metadata": {
+                "label": "compare_5_ai_tools",
+                "question": ""
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:compare_5_ai_tools"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "browser",
+            "inputs": [
+              "n:compare_5_ai_tools",
+              "n:3"
+            ],
+            "metadata": {
+              "url": "https://www.cursor.ai/pricing",
+              "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+            }
+          },
+          {
+            "skill": "browser",
+            "inputs": [
+              "n:compare_5_ai_tools",
+              "n:4"
+            ],
+            "metadata": {
+              "url": "https://github.com/copilot/github-copilot",
+              "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+            }
+          },
+          {
+            "skill": "browser",
+            "inputs": [
+              "n:compare_5_ai_tools",
+              "n:5"
+            ],
+            "metadata": {
+              "url": "https://codeium.com/pricing",
+              "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+            }
+          },
+          {
+            "skill": "browser",
+            "inputs": [
+              "n:compare_5_ai_tools",
+              "n:6"
+            ],
+            "metadata": {
+              "url": "https://tabnine.ai/pricing",
+              "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+            }
+          },
+          {
+            "skill": "browser",
+            "inputs": [
+              "n:compare_5_ai_tools",
+              "n:7"
+            ],
+            "metadata": {
+              "url": "https://aws.amazon.com/bots-federation/pricing",
+              "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:compare_5_ai_tools"
+            ],
+            "metadata": {
+              "label": "compare_5_ai_tools",
+              "question": ""
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:compare_5_ai_tools"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 82.72973132133484,
+        "provider": "ollama",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "browser",
+      "inputs": [
+        "n:7",
+        "n:3"
+      ],
+      "metadata": {
+        "url": "https://www.cursor.ai/pricing",
+        "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+      },
+      "status": "pending",
+      "id": "n:2"
+    },
+    {
+      "skill": "browser",
+      "inputs": [
+        "n:7",
+        "n:4"
+      ],
+      "metadata": {
+        "url": "https://github.com/copilot/github-copilot",
+        "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+      },
+      "status": "pending",
+      "id": "n:3"
+    },
+    {
+      "skill": "browser",
+      "inputs": [
+        "n:7",
+        "n:5"
+      ],
+      "metadata": {
+        "url": "https://codeium.com/pricing",
+        "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+      },
+      "status": "pending",
+      "id": "n:4"
+    },
+    {
+      "skill": "browser",
+      "inputs": [
+        "n:7",
+        "n:6"
+      ],
+      "metadata": {
+        "url": "https://tabnine.ai/pricing",
+        "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+      },
+      "status": "pending",
+      "id": "n:5"
+    },
+    {
+      "skill": "browser",
+      "inputs": [
+        "n:7",
+        "n:7"
+      ],
+      "metadata": {
+        "url": "https://aws.amazon.com/bots-federation/pricing",
+        "goal": "filter Actions=Search, Libraries=Transformers, Sort=Price; then extract top 3 tool cards"
+      },
+      "status": "pending",
+      "id": "n:6"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:7"
+      ],
+      "metadata": {
+        "label": "compare_5_ai_tools",
+        "question": ""
+      },
+      "status": "pending",
+      "id": "n:7"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:7"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:8"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:3",
+      "target": "n:2"
+    },
+    {
+      "source": "n:4",
+      "target": "n:3"
+    },
+    {
+      "source": "n:5",
+      "target": "n:4"
+    },
+    {
+      "source": "n:6",
+      "target": "n:5"
+    },
+    {
+      "source": "n:7",
+      "target": "n:2"
+    },
+    {
+      "source": "n:7",
+      "target": "n:3"
+    },
+    {
+      "source": "n:7",
+      "target": "n:4"
+    },
+    {
+      "source": "n:7",
+      "target": "n:5"
+    },
+    {
+      "source": "n:7",
+      "target": "n:6"
+    },
+    {
+      "source": "n:7",
+      "target": "n:7"
+    },
+    {
+      "source": "n:7",
+      "target": "n:8"
+    }
+  ]
+}

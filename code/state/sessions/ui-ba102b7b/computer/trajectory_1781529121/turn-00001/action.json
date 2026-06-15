@@ -1,0 +1,10 @@
+{
+  "arguments": {
+    "name": "Paint"
+  },
+  "result_summary": "✅ Launched Microsoft.Paint_8wekyb3d8bbwe!App (pid 14204) in background.\n\nWindows:\n- \"Untitled - Paint\" [window_id: 6294484]\n→ Call get_window_state(pid: 14204, window_id) to inspect.",
+  "t_ms_from_session_start": 3402,
+  "t_start_ms_from_session_start": 53,
+  "timestamp": "1781529124.937",
+  "tool": "launch_app"
+}

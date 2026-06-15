@@ -1,0 +1,22 @@
+{
+  "node_id": "n:2",
+  "skill": "browser",
+  "status": "failed",
+  "inputs": [],
+  "result": {
+    "success": false,
+    "agent_name": "browser",
+    "output": {},
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 0.0,
+    "provider": "",
+    "error": "exception: HTTPStatusError: Server error '502 Bad Gateway' for url 'http://localhost:8109/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502",
+    "error_code": null
+  },
+  "prompt_sent": "(exception before prompt-render)",
+  "started_at": 1780923900.361968,
+  "completed_at": 1780923900.361968,
+  "retries": 0
+}

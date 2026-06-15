@@ -1,0 +1,24 @@
+[1]<a>Learn more</a>
+[2]<button>Close</button>
+[3]<a>Homepage</a>
+[4]<button>Platform</button>
+[5]<button>Solutions</button>
+[6]<button>Resources</button>
+[7]<button>Open Source</button>
+[8]<button>Enterprise</button>
+[9]<a>Pricing</a>
+[10]<button>Search or jump to…</button>
+[11]<a>Sign in</a>
+[12]<a>Sign up</a>
+[13]<a>Start free for 30 days</a>
+[14]<a>Join for free</a>
+[15]<summary>Unlimited public/private repositories</summary>
+[16]<summary>Dependabot security and version updates</summary>
+[17]<summary>2,000 CI/CD minutes/month Free for public repositories</summary>
+[18]<a>Continue with Team</a>
+[19]<summary>Access to GitHub Codespaces</summary>
+[20]<summary>Repository rules</summary>
+[21]<a>Start a free trial</a>
+[22]<a>Contact Sales</a>
+[23]<summary>Data residency</summary>
+[24]<summary>Enterprise Managed Users</summary>

@@ -1,0 +1,87 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Use the indexed material to provide a concise greeting.",
+          "nodes": [
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:0"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:0"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 5.562410831451416,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:1"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "Hello."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.07034969329834,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    }
+  ]
+}

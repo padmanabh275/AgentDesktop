@@ -1,0 +1,26 @@
+[1]<button>English</button>
+[2]<a>Contact us</a>
+[3]<a>AWS Marketplace</a>
+[4]<button>Support</button>
+[5]<button>My account</button>
+[6]<button>AWS Profile</button>
+[7]<a>nav-item-logo-link</a>
+[8]<a>AWS Summits</a>
+[9]<button role="button">Discover AWS</button>
+[10]<button role="button">Products</button>
+[11]<button role="button">Solutions</button>
+[12]<button role="button">Pricing</button>
+[13]<button role="button">Resources</button>
+[14]<button>Search</button>
+[15]<a>Sign in to console</a>
+[16]<a role="button">Create account</a>
+[17]<button>Open feedback</button>
+[18]<a>Overview</a>
+[19]<li role="button">Features submenu</li>
+[20]<a>Pricing</a>
+[21]<a>Documentation</a>
+[22]<li role="button">Resources submenu</li>
+[23]<a>Get started</a>
+[24]<button>I can connect you with an AWS sales representative if you like to learn more abo</button>
+[25]<button>Need more info? Highlight any text to get an explanation generated with AWS gene</button>
+[26]<button>Ask a Question</button>

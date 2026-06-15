@@ -1,0 +1,43 @@
+[1]<button>Light mode — click for dark</button>
+[2]<a>Pro</a>
+[3]<a>Teams</a>
+[4]<a>Pricing</a>
+[5]<a>Documentation</a>
+[6]<a>Npm</a>
+[7]<input role="combobox">Search packages</input>
+[8]<button>Clear search</button>
+[9]<button>Search</button>
+[10]<a>Sign Up</a>
+[11]<a>Sign In</a>
+[12]<summary>Sort by: Most downloaded this week. Press Enter to open dropdown</summary>
+[13]<a>axonrouter</a>
+[14]<a>ai-router</a>
+[15]<a>llm-proxy</a>
+[16]<a>openai</a>
+[17]<a>claude</a>
+[18]<a>gemini</a>
+[19]<a>smart-fallback</a>
+[20]<a>rate-limiting</a>
+[21]<a>publisher hijilab</a>
+[22]<a>stackbrief</a>
+[23]<a>claude-code</a>
+[24]<a>cursor</a>
+[25]<a>mcp</a>
+[26]<a>codebase</a>
+[27]<a>context</a>
+[28]<a>developer-tools</a>
+[29]<a>ai</a>
+[30]<a>ollama</a>
+[31]<a>code-analysis</a>
+[32]<a>publisher ragavtech</a>
+[33]<a>itismyskillmarket</a>
+[34]<a>publisher wanxuchen</a>
+[35]<a>create-composure</a>
+[36]<a>publisher hrconsult</a>
+[37]<a>ai-lens</a>
+[38]<a>publisher r-ms</a>
+[39]<span></span>
+[40]<span></span>
+[41]<span></span>
+[42]<span></span>
+[43]<span></span>

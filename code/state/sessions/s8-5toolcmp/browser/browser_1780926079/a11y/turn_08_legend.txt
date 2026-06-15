@@ -1,0 +1,48 @@
+[1]<a>Skip to content</a>
+[2]<a>Homepage</a>
+[3]<a>Product</a>
+[4]<a>Enterprise</a>
+[5]<a>Pricing</a>
+[6]<a>Resources</a>
+[7]<a>Sign in</a>
+[8]<a>Contact sales</a>
+[9]<a>Download</a>
+[10]<a>Download ⤓</a>
+[11]<a>Contact Sales</a>
+[12]<a>Agents</a>
+[13]<a>Teams</a>
+[14]<a>Enterprise</a>
+[15]<a>Pricing</a>
+[16]<a>Code Review</a>
+[17]<a>Tab</a>
+[18]<a>CLI</a>
+[19]<a>Cloud Agents</a>
+[20]<a>Marketplace ↗</a>
+[21]<a>Download</a>
+[22]<a>Changelog</a>
+[23]<a>Docs</a>
+[24]<a>Learn ↗</a>
+[25]<a>Forum ↗</a>
+[26]<a>Help ↗</a>
+[27]<a>Workshops</a>
+[28]<a>Status ↗</a>
+[29]<a>Careers</a>
+[30]<a>Blog</a>
+[31]<a>Community</a>
+[32]<a>Students</a>
+[33]<a>Brand</a>
+[34]<a>Future</a>
+[35]<a>Anysphere ↗</a>
+[36]<a>Terms of Service</a>
+[37]<a>Privacy Policy</a>
+[38]<a>Data Use</a>
+[39]<a>Security</a>
+[40]<a>X ↗</a>
+[41]<a>LinkedIn ↗</a>
+[42]<a>YouTube ↗</a>
+[43]<a>Anysphere, Inc.</a>
+[44]<a>SOC 2 Certified</a>
+[45]<button>System theme</button>
+[46]<button>Light theme</button>
+[47]<button>Dark theme</button>
+[48]<button>🌐 English ↓</button>

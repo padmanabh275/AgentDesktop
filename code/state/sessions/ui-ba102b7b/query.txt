@@ -1,0 +1,1 @@
+Open Paint  and Draw a triangle in blue color.

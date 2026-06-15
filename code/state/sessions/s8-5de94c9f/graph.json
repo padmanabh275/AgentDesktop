@@ -1,0 +1,193 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Fetch details for five AI coding tools, focusing on their free and paid plans through interactive browsing actions.",
+          "nodes": [
+            {
+              "skill": "browser",
+              "inputs": [],
+              "metadata": {
+                "label": "b1",
+                "url": "https://www.capterra.com/artificial-intelligence-software/",
+                "goal": "Search for AI coding tools and filter the results to find the top 5 tools."
+              }
+            },
+            {
+              "skill": "browser",
+              "inputs": [
+                "n:b1"
+              ],
+              "metadata": {
+                "label": "b2",
+                "url": "https://www.capterra.com/artificial-intelligence-software/",
+                "goal": "Open the detailed pages of the top 5 AI coding tools to gather information on their free and paid plans."
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:b2"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "Extract structured fields including tool name, free plan details, and paid plan details from the pages."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "browser",
+            "inputs": [],
+            "metadata": {
+              "label": "b1",
+              "url": "https://www.capterra.com/artificial-intelligence-software/",
+              "goal": "Search for AI coding tools and filter the results to find the top 5 tools."
+            }
+          },
+          {
+            "skill": "browser",
+            "inputs": [
+              "n:b1"
+            ],
+            "metadata": {
+              "label": "b2",
+              "url": "https://www.capterra.com/artificial-intelligence-software/",
+              "goal": "Open the detailed pages of the top 5 AI coding tools to gather information on their free and paid plans."
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:b2"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "Extract structured fields including tool name, free plan details, and paid plan details from the pages."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 10.200169324874878,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "browser",
+      "inputs": [],
+      "metadata": {
+        "label": "b1",
+        "url": "https://www.capterra.com/artificial-intelligence-software/",
+        "goal": "Search for AI coding tools and filter the results to find the top 5 tools."
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "browser",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.0,
+        "provider": "",
+        "error": "exception: HTTPStatusError: Server error '502 Bad Gateway' for url 'http://localhost:8109/v1/chat'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502",
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "browser",
+      "inputs": [
+        "n:2"
+      ],
+      "metadata": {
+        "label": "b2",
+        "url": "https://www.capterra.com/artificial-intelligence-software/",
+        "goal": "Open the detailed pages of the top 5 AI coding tools to gather information on their free and paid plans."
+      },
+      "status": "pending",
+      "id": "n:3"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:3"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "Extract structured fields including tool name, free plan details, and paid plan details from the pages."
+      },
+      "status": "pending",
+      "id": "n:4"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:4"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:5"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    },
+    {
+      "source": "n:2",
+      "target": "n:3"
+    },
+    {
+      "source": "n:3",
+      "target": "n:4"
+    },
+    {
+      "source": "n:4",
+      "target": "n:5"
+    }
+  ]
+}

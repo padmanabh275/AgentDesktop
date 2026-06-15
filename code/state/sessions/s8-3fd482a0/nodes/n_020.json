@@ -1,0 +1,30 @@
+{
+  "node_id": "n:20",
+  "skill": "browser",
+  "status": "failed",
+  "inputs": [],
+  "result": {
+    "success": false,
+    "agent_name": "browser",
+    "output": {
+      "url": "https://www.imdb.com/movies-in-theaters/",
+      "goal": "extract the current movies released this week along with their genres",
+      "path": "extract",
+      "turns": 0,
+      "content": null,
+      "actions": [],
+      "final_url": null
+    },
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 7.756742715835571,
+    "provider": "",
+    "error": "all layers exhausted; last: vision error: Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation",
+    "error_code": "interaction_failed"
+  },
+  "prompt_sent": "The Browser skill fetches and interacts with web pages. It walks a\nfour-layer cascade starting from the cheapest path (HTML extraction)\nand escalating only when needed (deterministic selectors, accessibility\ntree, then visual set-of-marks with a vision model). The escalation\nis internal; you pass `url` and `goal`, the skill chooses the layer.\n\nInputs: `metadata.url` (required), `metadata.goal` (required, free-text\ndescription of what to extract or do). Output: `BrowserOutput` with\n`content` (for extraction goals) or `actions` plus `final_url` (for\ninteraction goals), and `path` reporting the cascade layer that\nactually ran. When the page is gated by CAPTCHA or login, the skill\nreturns `error_code=\"gateway_blocked\"` and no content; the Planner\nshould route around by trying a different source URL or by handing\nback to the user.\n\nMEMORY HITS (8 from FAISS):\n  - [fact] Comparison of GitHub Copilot, Codeium, and Tabnine free vs paid plans.\n      source: user_query\n      raw: Compare GitHub Copilot, Codeium, and Tabnine free vs paid plans. Use browser on each tool's official pricing page with at least 3 visible actions per site (navigate, click pricing or expand plan details, scroll). Include a structured comparison table.\n  - [fact] Compare 5 AI coding tools: Cursor, GitHub Copilot, Codeium, Tabnine, Amazon Q Developer by free and paid plans.\n      source: user_query\n  - [fact] Compare 5 AI coding tools based on free and paid plans with browser actions.\n      source: user_query\n      raw: Compare 5 AI coding tools by free plan and paid plan. The agent must perform at least three visible browser actions, such as search, filter, sort, open product/detail pages, switch tabs, expand hidden content, or submit a form. Passive scraping from search snippets is not accepted. The final output must include a structured comparison table.\n  - [fact] Compare 3 laptops under Rs 80000\n      source: user_query\n      raw: Compare 3 laptops under Rs 80000\n  - [fact] Compare 3 laptops under ₹80,000.\n      source: user_query\n      raw: Compare 3 laptops under ₹80,000.\n  - [fact] Compare 3 laptops under ₹80,000.\n      source: user_query\n      raw: Compare 3 laptops under ₹80,000.\n  - [tool_outcome] Compare 5 AI coding tools\n      source: user_query\n      raw: Compare 5 AI coding tools\n  - [fact] Say hello in one short sentence.\n      source: user_query\n      raw: Say hello in one short sentence.\n\nINPUTS:\n[]",
+  "started_at": 1780962837.2610803,
+  "completed_at": 1780962845.017823,
+  "retries": 0
+}

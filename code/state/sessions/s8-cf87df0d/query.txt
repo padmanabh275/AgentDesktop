@@ -1,0 +1,1 @@
+Compare 5 AI coding tools (Cursor, GitHub Copilot, Codeium, Tabnine, Amazon Q Developer) by free plan and paid plan. Perform at least three visible browser actions: search, open pricing tabs, expand plan details. Include a structured comparison table.

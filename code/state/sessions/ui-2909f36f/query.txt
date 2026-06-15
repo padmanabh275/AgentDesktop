@@ -1,0 +1,1 @@
+Open Calculator and compute 847 times 293. Return the displayed result.

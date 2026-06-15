@@ -1,0 +1,43 @@
+{
+  "node_id": "n:60",
+  "skill": "researcher",
+  "status": "complete",
+  "inputs": [],
+  "result": {
+    "success": true,
+    "agent_name": "researcher",
+    "output": {
+      "question": "Compare movies released this week by their genres",
+      "sources": [
+        {
+          "url": "https://www.facebook.com/decider/posts/this-weeks-new-movies-span-every-genre/1068035565339865",
+          "title": "This week's new movies span every genre. - Facebook"
+        },
+        {
+          "url": "https://www.cinemark.com/genres",
+          "title": "Find New Movies by Genre at Cinemark"
+        },
+        {
+          "url": "https://www.filmcrave.com/box_office.php",
+          "title": "New Movie Releases June 8th, 2026 - FilmCrave"
+        }
+      ],
+      "findings": [
+        "This week's new movies span every genre. Movies like Carolina, Office Romance, Little Sister, and Masters of the Universe are releasing in theaters.",
+        "Cinemark makes it easy to find the perfect film by offering a wide range of genres including Action, Animation, Anime, Classics, Comedy, Concert Events, Crime, Documentary, Musical, Romance, Science Fiction, Sports, Thriller, and Western.",
+        "FilmCrave lists new movies released in theaters on June 6th, 2026, including Carolina, Office Romance, Little Sister, and Masters of the Universe."
+      ]
+    },
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 54.42583394050598,
+    "provider": "ollama",
+    "error": null,
+    "error_code": null
+  },
+  "prompt_sent": "You are the Researcher skill. You go to the web for a specific question\nand bring back normalised text the rest of the DAG can work from.\n\nYour tool surface is two MCP tools: `web_search(query, max_results)` and\n`fetch_url(url)`. Use them. Do not narrate; do not invent other tools.\n\nProcedure:\n  1. Read the QUESTION in the prompt.\n  2. Issue ONE `web_search` to get candidate URLs.\n  3. Pick the 1â€“3 most authoritative-looking URLs and fetch them with\n     `fetch_url` in sequence. Avoid clearly low-signal results (aggregator\n     spam, ad redirects).\n  4. Synthesise the relevant content from the fetched pages.\n\nTime budget: keep tool calls to 4 max per invocation. If a `fetch_url`\nreturns very little usable text, do not retry; move on.\n\nOutput schema (JSON, no prose, no markdown fences):\n\n  {\n    \"question\": \"<the question this run answered>\",\n    \"sources\": [{\"url\": \"<url>\", \"title\": \"<title>\"}, ...],\n    \"findings\": \"<2â€“6 short paragraphs of normalised text>\"\n  }\n\nYou do NOT produce the final user-facing answer. The downstream\ndistiller or formatter does that. If the question cannot be answered\nfrom the web within your budget, return `\"findings\": \"(not found)\"`\nand let the next node decide.\n\nQUESTION: Compare movies released this week by their genres\n\nMEMORY HITS (8 from FAISS):\n  - [fact] Comparison of GitHub Copilot, Codeium, and Tabnine free vs paid plans.\n      source: user_query\n      raw: Compare GitHub Copilot, Codeium, and Tabnine free vs paid plans. Use browser on each tool's official pricing page with at least 3 visible actions per site (navigate, click pricing or expand plan details, scroll). Include a structured comparison table.\n  - [fact] Compare 5 AI coding tools: Cursor, GitHub Copilot, Codeium, Tabnine, Amazon Q Developer by free and paid plans.\n      source: user_query\n  - [fact] Compare 5 AI coding tools based on free and paid plans with browser actions.\n      source: user_query\n      raw: Compare 5 AI coding tools by free plan and paid plan. The agent must perform at least three visible browser actions, such as search, filter, sort, open product/detail pages, switch tabs, expand hidden content, or submit a form. Passive scraping from search snippets is not accepted. The final output must include a structured comparison table.\n  - [fact] Compare 3 laptops under Rs 80000\n      source: user_query\n      raw: Compare 3 laptops under Rs 80000\n  - [fact] Compare 3 laptops under ₹80,000.\n      source: user_query\n      raw: Compare 3 laptops under ₹80,000.\n  - [fact] Compare 3 laptops under ₹80,000.\n      source: user_query\n      raw: Compare 3 laptops under ₹80,000.\n  - [tool_outcome] Compare 5 AI coding tools\n      source: user_query\n      raw: Compare 5 AI coding tools\n  - [fact] Say hello in one short sentence.\n      source: user_query\n      raw: Say hello in one short sentence.\n\nINPUTS:\n[]",
+  "started_at": 1780963220.4949272,
+  "completed_at": 1780963274.920761,
+  "retries": 0
+}

@@ -1,0 +1,17 @@
+{
+  "arguments": {
+    "pid": 28904,
+    "window_id": 67028,
+    "x": 100,
+    "y": 100
+  },
+  "click_point": {
+    "x": 100.0,
+    "y": 100.0
+  },
+  "result_summary": "✅ Injected click to pid 28904 at (-31891,-31899) (background, no foreground swap).",
+  "t_ms_from_session_start": 48101,
+  "t_start_ms_from_session_start": 47803,
+  "timestamp": "1781514221.651",
+  "tool": "click"
+}

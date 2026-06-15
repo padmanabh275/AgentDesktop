@@ -1,0 +1,10 @@
+{
+  "arguments": {
+    "name": "Calculator"
+  },
+  "result_summary": "✅ Launched Microsoft.WindowsCalculator_8wekyb3d8bbwe!App (pid 17444) in background.\n\nWindows:\n- \"Calculator\" [window_id: 68926]\n→ Call get_window_state(pid: 17444, window_id) to inspect.",
+  "t_ms_from_session_start": 3270,
+  "t_start_ms_from_session_start": 2328,
+  "timestamp": "1781529283.898",
+  "tool": "launch_app"
+}

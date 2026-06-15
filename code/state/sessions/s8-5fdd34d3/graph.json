@@ -1,0 +1,30 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "planner",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.0,
+        "provider": "",
+        "error": "exception: TypeError: 'NoneType' object is not callable",
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    }
+  ],
+  "edges": []
+}

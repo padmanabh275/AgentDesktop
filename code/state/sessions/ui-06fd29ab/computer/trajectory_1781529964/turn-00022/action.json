@@ -1,0 +1,12 @@
+{
+  "arguments": {
+    "pid": 31272,
+    "text": "Computer-Use Layer2b OK",
+    "window_id": 1114210
+  },
+  "result_summary": "✅ Typed 23 char(s) on pid 31272 via PostMessage (30ms delay).",
+  "t_ms_from_session_start": 115077,
+  "t_start_ms_from_session_start": 114967,
+  "timestamp": "1781530079.778",
+  "tool": "type_text"
+}

@@ -1,0 +1,136 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Leverage existing knowledge to compare laptops under \u20b980,000.",
+          "nodes": [
+            {
+              "skill": "retriever",
+              "inputs": [
+                "USER_QUERY"
+              ],
+              "metadata": {
+                "label": "r1",
+                "question": "Compare laptops under \u20b980,000."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:r1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "retriever",
+            "inputs": [
+              "USER_QUERY"
+            ],
+            "metadata": {
+              "label": "r1",
+              "question": "Compare laptops under \u20b980,000."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:r1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 5.949321746826172,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "retriever",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "label": "r1",
+        "question": "Compare laptops under \u20b980,000."
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "retriever",
+        "output": {
+          "found": false,
+          "chunks": [],
+          "summary": "No relevant information was found regarding laptops under \u20b980,000. The search did not yield any specific comparisons or details about laptops within the specified budget."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 34.178138971328735,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:2"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "formatter",
+        "output": {
+          "final_answer": "I couldn't find any information on laptops under \u20b980,000 for comparison. Please check other sources or specify different criteria."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 7.5550854206085205,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:2",
+      "target": "n:3"
+    }
+  ]
+}

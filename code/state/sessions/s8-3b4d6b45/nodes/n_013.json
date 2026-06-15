@@ -1,0 +1,33 @@
+{
+  "node_id": "n:13",
+  "skill": "browser",
+  "status": "failed",
+  "inputs": [
+    "USER_QUERY",
+    "n:7"
+  ],
+  "result": {
+    "success": false,
+    "agent_name": "browser",
+    "output": {
+      "url": "https://www.npmjs.com/search?q=ai%20coding%20tools",
+      "goal": "filter and sort AI coding tools",
+      "path": "extract",
+      "turns": 0,
+      "content": null,
+      "actions": [],
+      "final_url": null
+    },
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 197.05922412872314,
+    "provider": "",
+    "error": "all layers exhausted; last: vision error: HTTPStatusError: Server error '502 Bad Gateway' for url 'http://localhost:8109/v1/vision'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502",
+    "error_code": "interaction_failed"
+  },
+  "prompt_sent": "The Browser skill fetches and interacts with web pages. It walks a\nfour-layer cascade starting from the cheapest path (HTML extraction)\nand escalating only when needed (deterministic selectors, accessibility\ntree, then visual set-of-marks with a vision model). The escalation\nis internal; you pass `url` and `goal`, the skill chooses the layer.\n\nInputs: `metadata.url` (required), `metadata.goal` (required, free-text\ndescription of what to extract or do). Output: `BrowserOutput` with\n`content` (for extraction goals) or `actions` plus `final_url` (for\ninteraction goals), and `path` reporting the cascade layer that\nactually ran. When the page is gated by CAPTCHA or login, the skill\nreturns `error_code=\"gateway_blocked\"` and no content; the Planner\nshould route around by trying a different source URL or by handing\nback to the user.\n\nUSER_QUERY: Compare 5 AI coding tools by free plan and paid plan.)\n\nMEMORY HITS (6 from FAISS):\n  - [fact] Compare 5 AI coding tools based on free and paid plans with browser actions.\n      source: user_query\n      raw: Compare 5 AI coding tools by free plan and paid plan. The agent must perform at least three visible browser actions, such as search, filter, sort, open product/detail pages, switch tabs, expand hidden content, or submit a form. Passive scraping from search snippets is not accepted. The final output must include a structured comparison table.\n  - [fact] Compare 5 AI coding tools: Cursor, GitHub Copilot, Codeium, Tabnine, Amazon Q Developer by free and paid plans.\n      source: user_query\n  - [tool_outcome] Compare 5 AI coding tools\n      source: user_query\n      raw: Compare 5 AI coding tools\n  - [fact] Comparison of GitHub Copilot, Codeium, and Tabnine free vs paid plans.\n      source: user_query\n      raw: Compare GitHub Copilot, Codeium, and Tabnine free vs paid plans. Use browser on each tool's official pricing page with at least 3 visible actions per site (navigate, click pricing or expand plan details, scroll). Include a structured comparison table.\n  - [fact] Say hello in one short sentence.\n      source: user_query\n      raw: Say hello in one short sentence.\n  - [fact] Say hello in one short sentence.\n      source: user_query\n      raw: Say hello in one short sentence.\n\nINPUTS:\n[\n  {\n    \"id\": \"USER_QUERY\",\n    \"kind\": \"query\",\n    \"value\": \"Compare 5 AI coding tools by free plan and paid plan.)\"\n  },\n  {\n    \"id\": \"n:7\",\n    \"kind\": \"upstream\",\n    \"skill\": \"planner\",\n    \"output\": {\n      \"rationale\": \"Extract relevant information from each tool's official pricing page.\",\n      \"nodes\": [\n        {\n          \"skill\": \"browser\",\n          \"inputs\": [\n            \"n:USER_QUERY\",\n            \"BASE_URL\"\n          ],\n          \"metadata\": {\n            \"url\": \"https://huggingface.co/models\",\n            \"goal\": \"filter Tasks=Text Generation, Libraries=Transformers, Sort=Most Likes\"\n          }\n        },\n        {\n          \"skill\": \"distiller\",\n          \"inputs\": [\n            \"n:browser_output\"\n          ],\n          \"metadata\": {\n            \"label\": \"d1\",\n            \"question\": \"\"\n          }\n        },\n        {\n          \"skill\": \"critic\",\n          \"inputs\": [\n            \"n:distiller_output\",\n            \"goal=structured comparison table\"\n          ],\n          \"metadata\": {\n            \"label\": \"c1\",\n            \"question\": \"\"\n          }\n        },\n        {\n          \"skill\": \"formatter\",\n          \"inputs\": [\n            \"n:critic_output\",\n            \"n:browser_output\"\n          ],\n          \"metadata\": {\n            \"label\": \"out\"\n          }\n        }\n      ]\n    }\n  }\n]",
+  "started_at": 1780935834.209425,
+  "completed_at": 1780936031.268649,
+  "retries": 0
+}

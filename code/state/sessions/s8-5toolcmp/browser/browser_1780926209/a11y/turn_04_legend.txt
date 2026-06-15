@@ -1,0 +1,5 @@
+[1]<button>devin.ai</button>
+[2]<input>Email or phone</input>
+[3]<button>Forgot email?</button>
+[4]<button>Next</button>
+[5]<button>Create account</button>

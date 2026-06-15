@@ -1,0 +1,11 @@
+{
+  "arguments": {
+    "electron_debugging_port": 9222,
+    "name": "Cursor"
+  },
+  "result_summary": "Failed to activate packaged app \"Anysphere.Cursor\": The parameter is incorrect. (0x80070057)",
+  "t_ms_from_session_start": 1672,
+  "t_start_ms_from_session_start": 1668,
+  "timestamp": "1781530110.118",
+  "tool": "launch_app"
+}

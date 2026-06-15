@@ -1,0 +1,14 @@
+[1]<button>close banner</button>
+[2]<button>Open Preferences</button>
+[3]<button>Accept All</button>
+[4]<a>Learn more about Ketch for data privacy (opens in a new tab)</a>
+[5]<a>Tabnine</a>
+[6]<a>Products</a>
+[7]<a>How it works</a>
+[8]<a>Pricing</a>
+[9]<a>Docs</a>
+[10]<a>Resources</a>
+[11]<a>Log in</a>
+[12]<a>Get a demo</a>
+[13]<a>Get a quote</a>
+[14]<a>Get a quote</a>

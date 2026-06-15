@@ -1,0 +1,11 @@
+{
+  "arguments": {
+    "action": "get_text",
+    "pid": 33476
+  },
+  "result_summary": "Missing required parameter: window_id",
+  "t_ms_from_session_start": 3845,
+  "t_start_ms_from_session_start": 3844,
+  "timestamp": "1781521468.413",
+  "tool": "page"
+}

@@ -1,0 +1,1 @@
+Open Calculator and add 2 + 4 and return the answer

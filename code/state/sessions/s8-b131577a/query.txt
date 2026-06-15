@@ -1,0 +1,1 @@
+Compare GitHub Copilot, Codeium, and Tabnine free vs paid plans. Use browser on each tool's official pricing page with at least 3 visible actions per site (navigate, click pricing or expand plan details, scroll). Include a structured comparison table.

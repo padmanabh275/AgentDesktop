@@ -1,0 +1,11 @@
+{
+  "arguments": {
+    "pid": 32348,
+    "text": "847*293="
+  },
+  "result_summary": "No windows found for pid 32348. Provide window_id.",
+  "t_ms_from_session_start": 1827,
+  "t_start_ms_from_session_start": 1249,
+  "timestamp": "1781511275.727",
+  "tool": "type_text"
+}

@@ -1,0 +1,18 @@
+[1]<a role="button">AI & ML</a>
+[2]<a role="button">Developer skills</a>
+[3]<a role="button">Engineering</a>
+[4]<a role="button">Enterprise software</a>
+[5]<a role="button">News & insights</a>
+[6]<a role="button">Open Source</a>
+[7]<a role="button">Security</a>
+[8]<a>individuals</a>
+[9]<a>businesses and enterprises</a>
+[10]<a>FAQ and related discussion</a>
+[11]<a>Mario Rodriguez</a>
+[12]<a>@mariorod</a>
+[13]<a>Why we’re making this change</a>
+[14]<a>What’s changing</a>
+[15]<a>What this means for individuals</a>
+[16]<a>What this means for businesses and enterprises</a>
+[17]<a>The bottom line</a>
+[18]<button>Close image</button>

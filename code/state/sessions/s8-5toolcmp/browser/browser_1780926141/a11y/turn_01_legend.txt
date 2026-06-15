@@ -1,0 +1,29 @@
+[1]<a>Learn more</a>
+[2]<button>Close</button>
+[3]<a>Homepage</a>
+[4]<button>Platform</button>
+[5]<button>Solutions</button>
+[6]<button>Resources</button>
+[7]<button>Open Source</button>
+[8]<button>Enterprise</button>
+[9]<a>Pricing</a>
+[10]<button>Search or jump to…</button>
+[11]<a>Sign in</a>
+[12]<a>Sign up</a>
+[13]<a>AI</a>
+[14]<a>GitHub Copilot</a>
+[15]<a>Copilot in VS Code</a>
+[16]<a>Agents on GitHub</a>
+[17]<a>Copilot CLI</a>
+[18]<a>For Business</a>
+[19]<a>Tutorials</a>
+[20]<a>Plans & Pricing</a>
+[21]<button role="tab">For individuals</button>
+[22]<button role="tab">For businesses</button>
+[23]<a>Get started</a>
+[24]<a>Open in VS Code</a>
+[25]<a>Learn more</a>
+[26]<a>upgrade to Pro+</a>
+[27]<a>Learn more</a>
+[28]<a>upgrade to Max</a>
+[29]<a>Learn more</a>

@@ -1,0 +1,2597 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Product prices need live search; memory has no laptop index.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR specs and price"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR 2025 2026"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR value for money"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price INR, pros"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR specs and price"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR 2025 2026"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR value for money"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price INR, pros"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 6.428084850311279,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR specs and price"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 127.00191831588745,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR 2025 2026"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 53.48783230781555,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR value for money"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 190.63520407676697,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:4"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:2",
+        "n:3",
+        "n:4"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price INR, pros"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "distiller",
+        "output": {
+          "fields": {},
+          "rationale": "There is no evidence in the inputs regarding specific models, CPU, RAM, storage, price in INR, or pros of laptops."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.369330406188965,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:5"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:5"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "skipped",
+      "id": "n:6"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "USER_QUERY",
+        "n:5"
+      ],
+      "metadata": {
+        "target": "n:5",
+        "child": "n:6"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "critic",
+        "output": {
+          "verdict": "fail",
+          "rationale": "The output is missing a comparison of specific laptop models, which is essential given the user query to compare 3 laptops under \u20b980,000."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.091165542602539,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:7"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "critic failed target=n:5 child=n:6 rationale=The output is missing a comparison of specific laptop models, which is essential given the user query to compare 3 laptops under \u20b980,000.",
+        "recovers": "n:5",
+        "recovery_reason": "critic_fail"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Re-fetch the top 3 laptops under \u20b980,000 with a fresh approach to ensure a proper comparison.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR specs and price"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR 2025 2026"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR value for money"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price INR, pros"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR specs and price"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR 2025 2026"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR value for money"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price INR, pros"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 7.252639055252075,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:8"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR specs and price"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 377.27864146232605,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:9"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR 2025 2026"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 75.19382643699646,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:10"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR value for money"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 521.2367780208588,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:11"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:9",
+        "n:10",
+        "n:11"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price INR, pros"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "distiller",
+        "output": {
+          "fields": {},
+          "rationale": "There is no evidence in the inputs regarding specific laptops, their specifications, or pricing."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.9068727493286133,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:12"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:12"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "skipped",
+      "id": "n:13"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "USER_QUERY",
+        "n:12"
+      ],
+      "metadata": {
+        "target": "n:12",
+        "child": "n:13"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "critic",
+        "output": {
+          "verdict": "fail",
+          "rationale": "The output is missing the required comparison of three laptops under \u20b980,000, which was explicitly requested in the input."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.164175271987915,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:14"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "critic failed target=n:12 child=n:13 rationale=The output is missing the required comparison of three laptops under \u20b980,000, which was explicitly requested in the input.",
+        "recovers": "n:12",
+        "recovery_reason": "critic_fail"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Fetch three laptops under \u20b980,000 in parallel, ensuring a structured comparison.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR specs and price"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR 2025 2026"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR value for money"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price INR, pros"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR specs and price"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR 2025 2026"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR value for money"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price INR, pros"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 7.706569194793701,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:15"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR specs and price"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 406.3375563621521,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:16"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR 2025 2026"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 468.7313139438629,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:17"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR value for money"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 97.12635707855225,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:18"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:16",
+        "n:17",
+        "n:18"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price INR, pros"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "distiller",
+        "output": {
+          "fields": {},
+          "rationale": "There is no evidence in the inputs regarding models, CPU, RAM, storage, price in INR, or pros of laptops."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.411198616027832,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:19"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:19"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "skipped",
+      "id": "n:20"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "USER_QUERY",
+        "n:19"
+      ],
+      "metadata": {
+        "target": "n:19",
+        "child": "n:20"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "critic",
+        "output": {
+          "verdict": "fail",
+          "rationale": "The output is missing all relevant fields for comparing laptops, despite the user query clearly requesting a comparison of three laptops under \u20b980,000."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.157505750656128,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:21"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "critic failed target=n:19 child=n:20 rationale=The output is missing all relevant fields for comparing laptops, despite the user query clearly requesting a comparison of three laptops under \u20b980,000.",
+        "recovers": "n:19",
+        "recovery_reason": "critic_fail"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Use fresh web data to compare three laptops under \u20b980,000, ensuring structured output for comparison.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR with specs and price"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR with specs and price"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR with specs and price"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price INR, pros"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR with specs and price"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR with specs and price"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR with specs and price"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price INR, pros"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 8.260772466659546,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:22"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR with specs and price"
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.0,
+        "provider": "",
+        "error": "exception: ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:23"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR with specs and price"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 472.2513506412506,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:24"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR with specs and price"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 376.7320170402527,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:25"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:23",
+        "n:24",
+        "n:25"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price INR, pros"
+      },
+      "status": "pending",
+      "id": "n:26"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:26"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:27"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY",
+        "n:2",
+        "n:3",
+        "n:4",
+        "n:5",
+        "n:9",
+        "n:10",
+        "n:11",
+        "n:12",
+        "n:16",
+        "n:17",
+        "n:18",
+        "n:19"
+      ],
+      "metadata": {
+        "failure_report": "node=n:23 skill=researcher reason=upstream_failure error=exception: ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+        "recovers": "n:23",
+        "recovery_reason": "upstream_failure",
+        "prior_complete": [
+          "n:2",
+          "n:3",
+          "n:4",
+          "n:5",
+          "n:9",
+          "n:10",
+          "n:11",
+          "n:12",
+          "n:16",
+          "n:17",
+          "n:18",
+          "n:19"
+        ]
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Retry the laptop comparison with a fresh search due to previous failures.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR with good performance"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR with decent specs"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR for value"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price in INR, pros, cons"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR with good performance"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR with decent specs"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR for value"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price in INR, pros, cons"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 7.053558588027954,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:28"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR with good performance"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1513.4683499336243,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:29"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR with decent specs"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 81.88842701911926,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:30"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR for value"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1445.80224609375,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:31"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:29",
+        "n:30",
+        "n:31"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price in INR, pros, cons"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "distiller",
+        "output": {
+          "fields": {},
+          "rationale": "There is no evidence in the inputs regarding specific laptops, their specifications, or pricing."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.263812065124512,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:32"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:32"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "skipped",
+      "id": "n:33"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "USER_QUERY",
+        "n:32"
+      ],
+      "metadata": {
+        "target": "n:32",
+        "child": "n:33"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "critic",
+        "output": {
+          "verdict": "fail",
+          "rationale": "The output is missing a comparison of specific laptops, which is the primary request in the user query."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.002558946609497,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:34"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "critic failed target=n:32 child=n:33 rationale=The output is missing a comparison of specific laptops, which is the primary request in the user query.",
+        "recovers": "n:32",
+        "recovery_reason": "critic_fail"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Fresh search is needed to compare specific laptops under the budget of \u20b980,000.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR specs and price"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR 2025 2026"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR value for money"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price INR, pros"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR specs and price"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR 2025 2026"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR value for money"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price INR, pros"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 6.7877116203308105,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:35"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR specs and price"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1586.9885139465332,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:36"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR 2025 2026"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 2857.463945865631,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:37"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR value for money"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 57.18067264556885,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:38"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:36",
+        "n:37",
+        "n:38"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price INR, pros"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "distiller",
+        "output": {
+          "fields": {},
+          "rationale": "There is no evidence in the inputs regarding specific laptops, their models, CPU, RAM, storage, price in INR, or pros."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.054336071014404,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:39"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:39"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "skipped",
+      "id": "n:40"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "USER_QUERY",
+        "n:39"
+      ],
+      "metadata": {
+        "target": "n:39",
+        "child": "n:40"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "critic",
+        "output": {
+          "verdict": "fail",
+          "rationale": "The output is missing essential fields for a laptop comparison, such as specific models, specifications, and pricing, which are necessary to fulfill the user query."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.450432062149048,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:41"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "critic failed target=n:39 child=n:40 rationale=The output is missing essential fields for a laptop comparison, such as specific models, specifications, and pricing, which are necessary to fulfill the user query.",
+        "recovers": "n:39",
+        "recovery_reason": "critic_fail"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "The previous attempt to compare laptops failed; I will fetch fresh data and ensure essential fields are included for comparison.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR specs and price"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR 2025 2026"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR value for money"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price INR, pros"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR specs and price"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR 2025 2026"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR value for money"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price INR, pros"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 6.319721937179565,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:42"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR specs and price"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 59.85861873626709,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:43"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR 2025 2026"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1448.8361961841583,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:44"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR value for money"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 130.68224000930786,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:45"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:43",
+        "n:44",
+        "n:45"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price INR, pros"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "distiller",
+        "output": {
+          "fields": {},
+          "rationale": "There is no evidence in the inputs regarding specific laptops, their specifications, or prices."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.827559471130371,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:46"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:46"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "skipped",
+      "id": "n:47"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "USER_QUERY",
+        "n:46"
+      ],
+      "metadata": {
+        "target": "n:46",
+        "child": "n:47"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "critic",
+        "output": {
+          "verdict": "fail",
+          "rationale": "The output is missing the required comparison of three laptops under \u20b980,000, which was explicitly requested in the input."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.809736967086792,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:48"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "critic failed target=n:46 child=n:47 rationale=The output is missing the required comparison of three laptops under \u20b980,000, which was explicitly requested in the input.",
+        "recovers": "n:46",
+        "recovery_reason": "critic_fail"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Re-attempt to compare three laptops under \u20b980,000 by fetching fresh data from the web.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR specs and price"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR 2025 2026"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR value for money"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price INR, pros"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR specs and price"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR 2025 2026"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR value for money"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price INR, pros"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 6.728515386581421,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:49"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR specs and price"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 1782.0593955516815,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:50"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR 2025 2026"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 147.18158102035522,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:51"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR value for money"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 56.589685916900635,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:52"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:50",
+        "n:51",
+        "n:52"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price INR, pros"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "distiller",
+        "output": {
+          "fields": {},
+          "rationale": "There is no evidence in the inputs regarding specific laptops, their specifications, or pricing."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 4.237086772918701,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:53"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:53"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "skipped",
+      "id": "n:54"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "USER_QUERY",
+        "n:53"
+      ],
+      "metadata": {
+        "target": "n:53",
+        "child": "n:54"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "critic",
+        "output": {
+          "verdict": "fail",
+          "rationale": "The output is missing the required comparison of three laptops under \u20b980,000, which was explicitly requested in the input."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 3.79017972946167,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:55"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "critic failed target=n:53 child=n:54 rationale=The output is missing the required comparison of three laptops under \u20b980,000, which was explicitly requested in the input.",
+        "recovers": "n:53",
+        "recovery_reason": "critic_fail"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Use fresh research to find three laptops under \u20b980,000 and ensure a structured comparison.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR specs and price"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR 2025 2026"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR value for money"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price INR, pros"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR specs and price"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR 2025 2026"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR value for money"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price INR, pros"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 6.647234916687012,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:56"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR specs and price"
+      },
+      "status": "running",
+      "id": "n:57"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR 2025 2026"
+      },
+      "status": "running",
+      "id": "n:58"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR value for money"
+      },
+      "status": "running",
+      "id": "n:59"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:57",
+        "n:58",
+        "n:59"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price INR, pros"
+      },
+      "status": "pending",
+      "id": "n:60"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:60"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:61"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    },
+    {
+      "source": "n:1",
+      "target": "n:3"
+    },
+    {
+      "source": "n:1",
+      "target": "n:4"
+    },
+    {
+      "source": "n:2",
+      "target": "n:5"
+    },
+    {
+      "source": "n:2",
+      "target": "n:28"
+    },
+    {
+      "source": "n:3",
+      "target": "n:5"
+    },
+    {
+      "source": "n:3",
+      "target": "n:28"
+    },
+    {
+      "source": "n:4",
+      "target": "n:5"
+    },
+    {
+      "source": "n:4",
+      "target": "n:28"
+    },
+    {
+      "source": "n:5",
+      "target": "n:7"
+    },
+    {
+      "source": "n:5",
+      "target": "n:28"
+    },
+    {
+      "source": "n:7",
+      "target": "n:6"
+    },
+    {
+      "source": "n:8",
+      "target": "n:9"
+    },
+    {
+      "source": "n:8",
+      "target": "n:10"
+    },
+    {
+      "source": "n:8",
+      "target": "n:11"
+    },
+    {
+      "source": "n:9",
+      "target": "n:12"
+    },
+    {
+      "source": "n:9",
+      "target": "n:28"
+    },
+    {
+      "source": "n:10",
+      "target": "n:12"
+    },
+    {
+      "source": "n:10",
+      "target": "n:28"
+    },
+    {
+      "source": "n:11",
+      "target": "n:12"
+    },
+    {
+      "source": "n:11",
+      "target": "n:28"
+    },
+    {
+      "source": "n:12",
+      "target": "n:14"
+    },
+    {
+      "source": "n:12",
+      "target": "n:28"
+    },
+    {
+      "source": "n:14",
+      "target": "n:13"
+    },
+    {
+      "source": "n:15",
+      "target": "n:16"
+    },
+    {
+      "source": "n:15",
+      "target": "n:17"
+    },
+    {
+      "source": "n:15",
+      "target": "n:18"
+    },
+    {
+      "source": "n:16",
+      "target": "n:19"
+    },
+    {
+      "source": "n:16",
+      "target": "n:28"
+    },
+    {
+      "source": "n:17",
+      "target": "n:19"
+    },
+    {
+      "source": "n:17",
+      "target": "n:28"
+    },
+    {
+      "source": "n:18",
+      "target": "n:19"
+    },
+    {
+      "source": "n:18",
+      "target": "n:28"
+    },
+    {
+      "source": "n:19",
+      "target": "n:21"
+    },
+    {
+      "source": "n:19",
+      "target": "n:28"
+    },
+    {
+      "source": "n:21",
+      "target": "n:20"
+    },
+    {
+      "source": "n:22",
+      "target": "n:23"
+    },
+    {
+      "source": "n:22",
+      "target": "n:24"
+    },
+    {
+      "source": "n:22",
+      "target": "n:25"
+    },
+    {
+      "source": "n:23",
+      "target": "n:26"
+    },
+    {
+      "source": "n:24",
+      "target": "n:26"
+    },
+    {
+      "source": "n:25",
+      "target": "n:26"
+    },
+    {
+      "source": "n:26",
+      "target": "n:27"
+    },
+    {
+      "source": "n:28",
+      "target": "n:29"
+    },
+    {
+      "source": "n:28",
+      "target": "n:30"
+    },
+    {
+      "source": "n:28",
+      "target": "n:31"
+    },
+    {
+      "source": "n:29",
+      "target": "n:32"
+    },
+    {
+      "source": "n:30",
+      "target": "n:32"
+    },
+    {
+      "source": "n:31",
+      "target": "n:32"
+    },
+    {
+      "source": "n:32",
+      "target": "n:34"
+    },
+    {
+      "source": "n:34",
+      "target": "n:33"
+    },
+    {
+      "source": "n:35",
+      "target": "n:36"
+    },
+    {
+      "source": "n:35",
+      "target": "n:37"
+    },
+    {
+      "source": "n:35",
+      "target": "n:38"
+    },
+    {
+      "source": "n:36",
+      "target": "n:39"
+    },
+    {
+      "source": "n:37",
+      "target": "n:39"
+    },
+    {
+      "source": "n:38",
+      "target": "n:39"
+    },
+    {
+      "source": "n:39",
+      "target": "n:41"
+    },
+    {
+      "source": "n:41",
+      "target": "n:40"
+    },
+    {
+      "source": "n:42",
+      "target": "n:43"
+    },
+    {
+      "source": "n:42",
+      "target": "n:44"
+    },
+    {
+      "source": "n:42",
+      "target": "n:45"
+    },
+    {
+      "source": "n:43",
+      "target": "n:46"
+    },
+    {
+      "source": "n:44",
+      "target": "n:46"
+    },
+    {
+      "source": "n:45",
+      "target": "n:46"
+    },
+    {
+      "source": "n:46",
+      "target": "n:48"
+    },
+    {
+      "source": "n:48",
+      "target": "n:47"
+    },
+    {
+      "source": "n:49",
+      "target": "n:50"
+    },
+    {
+      "source": "n:49",
+      "target": "n:51"
+    },
+    {
+      "source": "n:49",
+      "target": "n:52"
+    },
+    {
+      "source": "n:50",
+      "target": "n:53"
+    },
+    {
+      "source": "n:51",
+      "target": "n:53"
+    },
+    {
+      "source": "n:52",
+      "target": "n:53"
+    },
+    {
+      "source": "n:53",
+      "target": "n:55"
+    },
+    {
+      "source": "n:55",
+      "target": "n:54"
+    },
+    {
+      "source": "n:56",
+      "target": "n:57"
+    },
+    {
+      "source": "n:56",
+      "target": "n:58"
+    },
+    {
+      "source": "n:56",
+      "target": "n:59"
+    },
+    {
+      "source": "n:57",
+      "target": "n:60"
+    },
+    {
+      "source": "n:58",
+      "target": "n:60"
+    },
+    {
+      "source": "n:59",
+      "target": "n:60"
+    },
+    {
+      "source": "n:60",
+      "target": "n:61"
+    }
+  ]
+}

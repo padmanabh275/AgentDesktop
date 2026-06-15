@@ -1,0 +1,16 @@
+{
+  "arguments": {
+    "element_index": 26,
+    "pid": 3492,
+    "window_id": 68832
+  },
+  "click_point": {
+    "x": -39.0,
+    "y": 509.0
+  },
+  "result_summary": "✅ Performed UIA Invoke on [26] (screen (884,658)).",
+  "t_ms_from_session_start": 13144,
+  "t_start_ms_from_session_start": 13132,
+  "timestamp": "1781529294.370",
+  "tool": "click"
+}

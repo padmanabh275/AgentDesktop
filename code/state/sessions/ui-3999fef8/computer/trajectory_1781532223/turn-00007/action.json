@@ -1,0 +1,13 @@
+{
+  "arguments": {
+    "action": "execute_javascript",
+    "javascript": "const fs = require('fs'); fs.writeFileSync('s10_evidence.txt', 'Computer-Use Layer2b OK');",
+    "pid": 31272,
+    "window_id": 1114210
+  },
+  "result_summary": "Chromium's `execute_javascript` on Windows tried the bookmark-URL UIA bypass and the CDP fallback. The bookmark path failed (see debug logs); for the CDP path, relaunch the browser with `--remote-debugging-port=N` and export CUA_DRIVER_CDP_PORT=N before starting cua-driver. Alternatively, create a bookmark named `cua-driver-eval` (any URL — the driver overwrites it on first use) in the Favorites bar to enable the bookmark-URL bypass.  Or use `get_text` / `query_dom` for read-only access.",
+  "t_ms_from_session_start": 43688,
+  "t_start_ms_from_session_start": 43083,
+  "timestamp": "1781532266.989",
+  "tool": "page"
+}

@@ -1,0 +1,7 @@
+{
+  "session_id": "validation-task3",
+  "app": "browser",
+  "goal": "Open the canvas fixture and click inside the red circle on the canvas.",
+  "started_at": 1781514173.4676173,
+  "cua_output_dir": "state\\validation\\computer\\trajectory_1781514173"
+}

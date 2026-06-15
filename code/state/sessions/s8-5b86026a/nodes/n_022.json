@@ -1,0 +1,11 @@
+{
+  "node_id": "n:22",
+  "skill": "researcher",
+  "status": "running",
+  "inputs": [],
+  "result": null,
+  "prompt_sent": null,
+  "started_at": 1780958260.0648944,
+  "completed_at": null,
+  "retries": 0
+}

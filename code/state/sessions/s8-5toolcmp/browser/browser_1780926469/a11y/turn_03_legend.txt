@@ -1,0 +1,11 @@
+[1]<a>Log in</a>
+[2]<input>Your first name</input>
+[3]<input>Your last name</input>
+[4]<input>you@example.com</input>
+[5]<input>on</input>
+[6]<label>I agree to the Terms of Service and Privacy Policy</label>
+[7]<button>Continue →</button>
+[8]<button>Continue with Google</button>
+[9]<button>Continue with GitHub</button>
+[10]<button>Continue with Devin</button>
+[11]<button>Continue with SSO</button>

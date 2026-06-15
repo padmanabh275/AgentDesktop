@@ -1,0 +1,17 @@
+[1]<a>Sign in →</a>
+[2]<summary>See what's included</summary>
+[3]<button>Continue with Google</button>
+[4]<button>Continue with Apple</button>
+[5]<label>Email*</label>
+[6]<input>Email</input>
+[7]<label>Password*</label>
+[8]<input>Password</input>
+[9]<label>Username*</label>
+[10]<input>Username</input>
+[11]<label>Your Country/Region* , required</label>
+[12]<button>India</button>
+[13]<input>1</input>
+[14]<label>Receive occasional product updates and announcements</label>
+[15]<button>Create account</button>
+[16]<a>Terms of Service</a>
+[17]<a>GitHub Privacy Statement</a>

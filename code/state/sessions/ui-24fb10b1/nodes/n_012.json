@@ -1,0 +1,11 @@
+{
+  "node_id": "n:12",
+  "skill": "computer",
+  "status": "running",
+  "inputs": [],
+  "result": null,
+  "prompt_sent": null,
+  "started_at": 1781519873.9313812,
+  "completed_at": null,
+  "retries": 0
+}

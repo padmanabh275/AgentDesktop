@@ -1,0 +1,58 @@
+[1]<button>Light mode — click for dark</button>
+[2]<a>Pro</a>
+[3]<a>Teams</a>
+[4]<a>Pricing</a>
+[5]<a>Documentation</a>
+[6]<a>Npm</a>
+[7]<input role="combobox">Search packages</input>
+[8]<button>Clear search</button>
+[9]<button>Search</button>
+[10]<a>Sign Up</a>
+[11]<a>Sign In</a>
+[12]<summary>Sort by: Default. Press Enter to open dropdown</summary>
+[13]<a>type-fest</a>
+[14]<a>typescript</a>
+[15]<a>ts</a>
+[16]<a>types</a>
+[17]<a>utility</a>
+[18]<a>util</a>
+[19]<a>utilities</a>
+[20]<a>omit</a>
+[21]<a>merge</a>
+[22]<a>json</a>
+[23]<a>generics</a>
+[24]<a>publisher sindresorhus</a>
+[25]<a>globals</a>
+[26]<a>globals</a>
+[27]<a>global</a>
+[28]<a>identifiers</a>
+[29]<a>variables</a>
+[30]<a>vars</a>
+[31]<a>jshint</a>
+[32]<a>eslint</a>
+[33]<a>environments</a>
+[34]<a>publisher sindresorhus</a>
+[35]<a>postcss</a>
+[36]<a>css</a>
+[37]<a>manipulation</a>
+[38]<a>parser</a>
+[39]<a>postcss</a>
+[40]<a>preprocessor</a>
+[41]<a>rework</a>
+[42]<a>source map</a>
+[43]<a>transform</a>
+[44]<a>transpiler</a>
+[45]<a>publisher ai</a>
+[46]<a>typescript</a>
+[47]<a>TypeScript</a>
+[48]<a>Microsoft</a>
+[49]<a>compiler</a>
+[50]<a>language</a>
+[51]<a>javascript</a>
+[52]<a>publisher typescript-bot</a>
+[53]<a>yargs</a>
+[54]<span></span>
+[55]<span></span>
+[56]<span></span>
+[57]<span></span>
+[58]<span></span>

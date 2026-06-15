@@ -1,0 +1,30 @@
+[1]<button>Learn more</button>
+[2]<a>Capterra home</a>
+[3]<input role="combobox">Find the right software</input>
+[4]<button>Categories</button>
+[5]<a>Compare</a>
+[6]<button>Write a review</button>
+[7]<a>For vendors</a>
+[8]<button>Join or Log in</button>
+[9]<a>Home</a>
+[10]<a>Learn more</a>
+[11]<a></a>
+[12]<button>New Relic</button>
+[13]<a>4.5 (195)</a>
+[14]<button>save-button</button>
+[15]<button>visit New Relic website</button>
+[16]<a>Learn more about New Relic</a>
+[17]<button>Add to compare</button>
+[18]<a></a>
+[19]<button>Site24x7</button>
+[20]<a>4.7 (351)</a>
+[21]<button>save-button</button>
+[22]<button>visit Site24x7 website</button>
+[23]<input>Search Product Name</input>
+[24]<label role="checkbox">Free Trial</label>
+[25]<label role="checkbox">Free Version</label>
+[26]<label role="checkbox">Monthly Subscription</label>
+[27]<label role="checkbox">Annual Subscription</label>
+[28]<label role="checkbox">One-Time License</label>
+[29]<i role="img">chevron-down</i>
+[30]<i role="img">circle-question</i>

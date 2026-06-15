@@ -1,0 +1,27 @@
+[1]<a>Skip to content</a>
+[2]<a>Homepage</a>
+[3]<a>Product</a>
+[4]<a>Enterprise</a>
+[5]<a>Pricing</a>
+[6]<a>Resources</a>
+[7]<a>Sign in</a>
+[8]<a>Contact sales</a>
+[9]<a>Download</a>
+[10]<input>monthly</input>
+[11]<input>yearly</input>
+[12]<a>Hobby Free Includes: ✓ No credit card required ✓ Limited Agent requests ✓ Limite</a>
+[13]<input>pro</input>
+[14]<input>pro_plus</input>
+[15]<input>ultra</input>
+[16]<a>Get Pro</a>
+[17]<input>teams_standard</input>
+[18]<input>teams_premium</input>
+[19]<a>Get Teams</a>
+[20]<a>Enterprise Custom Everything on Teams, plus: ✓ Pooled usage to maximize budget e</a>
+[21]<span>Monthly</span>
+[22]<span>Yearly</span>
+[23]<span>Pro</span>
+[24]<span>Pro+</span>
+[25]<span>Ultra</span>
+[26]<span>Standard</span>
+[27]<span>Premium</span>

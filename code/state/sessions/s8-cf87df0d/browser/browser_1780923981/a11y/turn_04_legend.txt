@@ -1,0 +1,23 @@
+[1]<a>Homepage</a>
+[2]<button>Platform</button>
+[3]<button>Solutions</button>
+[4]<button>Resources</button>
+[5]<button>Open Source</button>
+[6]<button>Enterprise</button>
+[7]<a>Pricing</a>
+[8]<button>Search or jump to…</button>
+[9]<a>Sign in</a>
+[10]<a>Sign up</a>
+[11]<button>Appearance settings</button>
+[12]<a>RECOMMENDED Enterprise Cloud Build and deploy to GitHub-hosted cloud environment</a>
+[13]<a>Enterprise Server Manage and deploy GitHub Enterprise on your own servers, inclu</a>
+[14]<a>GitHub Homepage</a>
+[15]<a>Terms</a>
+[16]<a>Privacy</a>
+[17]<a>Security</a>
+[18]<a>Status</a>
+[19]<a>Community</a>
+[20]<a>Docs</a>
+[21]<a>Contact</a>
+[22]<button>Manage cookies</button>
+[23]<button>Do not share my personal information</button>

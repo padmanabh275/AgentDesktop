@@ -1,0 +1,10 @@
+{
+  "arguments": {
+    "name": "CanvasFixtureApp"
+  },
+  "result_summary": "Failed to launch: The operation was canceled by the user. (0x800704C7)",
+  "t_ms_from_session_start": 14851,
+  "t_start_ms_from_session_start": 472,
+  "timestamp": "1781519891.403",
+  "tool": "launch_app"
+}

@@ -1,0 +1,14 @@
+[1]<a>WINDSURF IS NOW DEVIN DESKTOP. THE IDE YOU LOVE, WITH MORE FEATURES. LEARN MORE </a>
+[2]<a></a>
+[3]<button>Product</button>
+[4]<button>Solutions</button>
+[5]<a>Customers</a>
+[6]<button>Resources</button>
+[7]<a>Pricing</a>
+[8]<a>Contact sales</a>
+[9]<a>Try Devin</a>
+[10]<a>Download</a>
+[11]<a>SWE 1.6, OUR LATEST MODEL, IS NOW AVAILABLE →</a>
+[12]<a>Download</a>
+[13]<a>Select plan</a>
+[14]<a>Select plan</a>

@@ -1,0 +1,7 @@
+{
+  "session_id": "validation-task1",
+  "app": "Calculator",
+  "goal": "Compute 847 times 293 and return the displayed result.",
+  "started_at": 1781514818.956815,
+  "cua_output_dir": "state\\validation\\computer\\trajectory_1781514818"
+}

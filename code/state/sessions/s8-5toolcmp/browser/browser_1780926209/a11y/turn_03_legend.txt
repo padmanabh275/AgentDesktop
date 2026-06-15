@@ -1,0 +1,6 @@
+[1]<button>Continue with GitHub</button>
+[2]<button>Continue with Google</button>
+[3]<button>Continue with Windsurf</button>
+[4]<input>Email address</input>
+[5]<button>Sign up</button>
+[6]<a>Log in</a>

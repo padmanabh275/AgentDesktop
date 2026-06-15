@@ -1,0 +1,591 @@
+[
+  {
+    "tool": "Cursor",
+    "url": "https://cursor.com/pricing",
+    "path": "a11y",
+    "actions": [
+      {
+        "turn": 1,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 5
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 2,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down",
+            "amount": 1
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 3,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "scroll",
+            "direction": "down"
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 4,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "scroll",
+            "direction": "down"
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 5,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down",
+            "amount": 3
+          },
+          {
+            "type": "scroll",
+            "direction": "down",
+            "amount": 3
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 6,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down",
+            "amount": 3
+          },
+          {
+            "type": "scroll",
+            "direction": "down",
+            "amount": 3
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 7,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 5
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 8,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "scroll",
+            "direction": "down"
+          }
+        ],
+        "outcome": "ok | ok"
+      }
+    ],
+    "turns": 8,
+    "success": true,
+    "content": "Pricing\nHobby\nFree\nIncludes:\n- ✓ No credit card required\n- ✓ Limited Agent requests\n- ✓ Limited Tab completions\nDownload\nIndividual\n$20 / mo.\nEverything in Hobby, plus:\n- ✓ Extended limits on Agent\n- ✓ Access to frontier models\n- ✓ MCPs, skills, and hooks\n- ✓ Cloud agents\n- ✓ Bugbot on usage-based billing\nTeams\n$40 / user / mo.\nEverything on Individual, plus:\n- ✓ Centralized team billing and administration\n- ✓ Team marketplace for internal rules, skills, and plugins\n- ✓ Agentic code reviews with Bugbot\n- ✓ Cloud agents and automations with shared team context\n- ✓ Usage analytics to understand team behavior\n- ✓ Team-wide privacy mode\n- ✓ SAML/OIDC SSO\nEnterprise\nCustom\nEverything on Teams, plus:\n- ✓ Pooled usage to maximize budget efficiency\n- ✓ Invoice/PO billing\n- ✓ SCIM seat management\n- ✓ Repository, model, and MCP access controls\n- ✓ Auto-run, browser, and network controls\n- ✓ Audit logs and service accounts\n- ✓ AI code tracking API\n- ✓ Priority support and account management\nContact Sales\nTrusted every day by teams that build world-class software.\nQuestions & Answers\nWe recommend Pro+ for daily agent users, and Ultra for agent power users. The Teams plan is recommended for professionals collaborating with others, and larger organizations that need invoicing, pooled usage, or advanced security should choose Enterprise.\nSelf-serve plans support all major credit and debit cards. For invoice-based billing and wire transfers, please\n[contact us](https://cursor.com/contact-sales?source=pricing_faq)to discuss the Enterprise plan.Every plan includes a set amount of model usage. On-demand usage allows you to continue using models after your included amount is consumed, billed in arrears. See\n[our docs](/docs/account/pricing)for more details.Admins can access usage information and key metrics through the\n[Admin Dashboard](/docs/account/teams/dashboard).Privacy mode can be enabled in settings or by a team admin. When it is enabled, we guarantee that code data is never stored by our model providers or used for training. You can learn more on our\n[Security](/security)page.No. Cursor subscriptions are only sold directly through\n[cursor.com](https://cursor.com). We do not authorize any resellers or third-party sellers. Subscriptions purchased from any other source are unauthorized and may be fraudulent, insecure, or obtained through abuse of our systems. These accounts may be suspended or terminated at any time. To protect your access and security, purchase Cursor only through our official website.You're welcome to join",
+    "error": null,
+    "elapsed_s": 61.3
+  },
+  {
+    "tool": "Tabnine",
+    "url": "https://www.tabnine.com/pricing",
+    "path": "a11y",
+    "actions": [
+      {
+        "turn": 1,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 5
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 2,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 9
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 3,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "click",
+            "mark": 9
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 4,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 8
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 5,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 8
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 6,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 8
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 7,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 8
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 8,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 8
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      }
+    ],
+    "turns": 8,
+    "success": true,
+    "content": "Tabnine named a Visionary\n2026 Gartner® Magic Quadrant™\n//\nPricing\n//\nSimple, clear, and transparent pricing for our private, secure AI-powered development platform optimized for your organization.\nThe Tabnine Code Assistant Platform provides high-quality code completions and AI chat grounded in your codebase, helping developers write, understand, and refactor code faster. Designed for teams that want immediate productivity gains, it integrates directly into popular IDEs and supports secure, enterprise-grade deployments.\n39\nper user per month\n{ Annual subscription * }\n- Code your way:\n- AI code completions for current line and multiple lines for full-function implementation\n- AI-powered chat in the IDE that supports every step in the SDLC,\nusing leading LLMs from Anthropic, OpenAI, Google, Meta, Mistral and others\n- Works in all major IDEs\n- Integration with Atlassian Jira Cloud and Data Center to inform AI responses and generation\n- Flexible deployment options – SaaS, VPC, on-premises, or fully air-gapped. You choose where your code lives\n- Zero code retention and total privacy – No storage, no training on your code, no sharing with third parties\n- End-to-end encryption and TLS. Secure communication and data integrity in every environment\n- SSO integration for ease of administration for private deployments\n- Enterprise-grade compliance – Meets GDPR, SOC 2, ISO 27001, and more\n- License-safe AI usage. Built-in protection against licensing risks**\n- Fully private deployment on SaaS or self-hosted (VPC, on-premises, with the option to be fully air-gapped)\n- Compatible with all major IDEs, LLMs, languages, and cloud providers\n- Works across legacy systems and modern stacks\n- No Lock-in and no forced tool changes\n- Define clear boundaries and behaviors for the AI\n- Governance controls to manage permissions, scope, and usage\n- Centralized analytics for visibility into adoption, cost, and compliance\n- Adjust Tabnine to follow your rules, processes, and risk profile\n- Auditability for all usage\n- See usage metrics per user team\n- Control LLM access by user/ team\n- View code generation provenance\n- Advanced analytics\n- Priority ticket-based support during business hours\n- Training on AI-enabled software development for your entire team\n* Unlimited usage when using your own LLM on-prem or your LLM end point on cloud. Add payment for reserved token consumption quota when using Tabnine provided LLM access, based on actual LLM provider prices + 5% handling fee\n** IP indemnification – subject to terms and conditions\n{-}Less\ninfo\nThe Tabnine Agentic Platform includes everything in the Code Assistant Platform—plus agentic workflows and the Tabnine Context Engine. By giving agents a structured understanding of your architecture, dependencies, and organizational standards, teams can automate complex tasks, improve accuracy, and safely operate AI in production environments.\n59\nper user per month\n{ Annual subscription * }\n- Autonomous agents, with optional user-in-the-loop oversight\n- Follows organizational standards through customizable Coaching Guidelines\n- Can use various tools through the Model Context Protocol (MCP):\n- Code Tools: Git operations, testing frameworks, linters\n- External Services: JIRA, Confluence, databases, APIs\n- Development Tools: Docker, package managers, CI/CD systems\n- Terminal-native AI coding agent for real development workflows\n- Automates tasks like code changes, refactoring, and pull requests\n- Runs in local environments, remote sessions, and CI pipelines\n- Autonomous agents, with optional user-in-the-loop oversight\n- A Context Engine that understands your organization and its standards, included with your subscription\n- Unlimited codebase connections for Bitbucket, GitHub, Gitlab and Perforce P4 (Helix Core)\n- Connects to Git, Jira, Confluence, and more\n- Uses your real-time development context and adapts outputs accordingly\n- Applies your organizational coding standards consistently\n- Surfaces the most relevant APIs, docs, and code examples for your teams\n- Learn more at\n[Tabnine Context Engine](https://context.tabnine.com)\n- Flexible deployment options – SaaS, VPC, on-premises, or fully air-gapped. You choose where your code lives\n- Zero code retention and total privacy – No storage, no training on your code, no sharing with third parties\n- End-to-end encryption and TLS. Secure communication and data integrity in every environment\n- SSO integration for ease of administration for private deployments\n- Enterprise-grade compliance – Meets GDPR, SOC 2, ISO 27001, and more\n- License-safe AI usage. Built-in protection against licensing risks**\n- Fully private deployment on SaaS or self-hosted (VPC, on-premises, with the option to be fully air-gapped)\n- Compatible with all major IDEs, LLMs, languages, and cloud providers\n- Works across legacy systems and modern stacks\n- No Lock-in and no forced tool changes\n- Extensible via MCP\n- Define clear boundaries and behaviors for the AI\n- Governance controls to manage permissions, scope, and usage\n- Centralized analytics for visibility into adoption, cost, and compliance\n- Adjust Tabnine to follow your rules, processes, and risk profile\n- Auditability for all usage\n- Access MCP governance controls\n- Set pricing thresholds per user/team\n- See usage metrics per user team\n- Control LLM access by user/ team\n- View code generation provenance\n- Advanced analytics\n- Priority ticket-based support during business hours\n- Training on AI-enabled software development for your entire team\n- Run agents remotely/headless for use in CI/CD processes\n- See\n[Headless Agent pricing here](https://www.tabnine.com/headless-agent-pricing/)\n* Unlimited usage when using your own LLM on-prem or your LLM end point on cloud. Add payment for reserved token consumption quota when using Tabnine provided LLM access, based on actual LLM provider prices + 5% handling fee\n** IP indemnification – subject to terms and conditions\n{-}Less\ninfo\n//\nTabnine is the original AI coding platform\ntrusted by millions of developers and thousands of companies\n//\ntrusted by millions of developers and thousands of companies\n//\nContact us\nto learn more\n//\nto learn more",
+    "error": null,
+    "elapsed_s": 66.5
+  },
+  {
+    "tool": "GitHub Copilot",
+    "url": "https://github.com/features/copilot/plans",
+    "path": "a11y",
+    "actions": [
+      {
+        "turn": 1,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 1
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 2,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down",
+            "amount": 3
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 3,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "scroll",
+            "direction": "down"
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 4,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 8
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 5,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 9
+          },
+          {
+            "type": "scroll",
+            "direction": "down"
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 6,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 10
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 7,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 11
+          },
+          {
+            "type": "scroll",
+            "direction": "down"
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 8,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 15
+          },
+          {
+            "type": "scroll",
+            "direction": "down"
+          }
+        ],
+        "outcome": "ok | ok"
+      }
+    ],
+    "turns": 8,
+    "success": true,
+    "content": "TL;DR: Today, we are announcing that all GitHub Copilot plans will transition to usage-based billing on June 1, 2026.\nInstead of counting premium requests, every Copilot plan will include a monthly allotment of GitHub AI Credits, with the option for paid plans to purchase additional usage. Usage will be calculated based on token consumption, including input, output, and cached tokens, using the listed API rates for each model.\nThis change aligns Copilot pricing with actual usage and is an important step toward a sustainable, reliable Copilot business and experience for all users.\nTo help customers prepare, we are also launching a preview bill experience in early May, giving users and admins visibility into projected costs before the June 1 transition. This will be available to users via their Billing Overview page when they log in to github.com.\nWhy we’re making this change\nCopilot is not the same product it was a year ago.\nIt has evolved from an in-editor assistant into an agentic platform capable of running long, multi-step coding sessions, using the latest models, and iterating across entire repositories. Agentic usage is becoming the default, and it brings significantly higher compute and inference demands.\nToday, a quick chat question and a multi-hour autonomous coding session can cost the user the same amount. GitHub has absorbed much of the escalating inference cost behind that usage, but the current premium request model is no longer sustainable.\nUsage-based billing fixes that. It better aligns pricing with actual usage, helps us maintain long-term service reliability, and reduces the need to gate heavy users.\nWhat’s changing\nStarting June 1, premium request units (PRUs) will be replaced by GitHub AI Credits.\nCredits will be consumed based on token usage, including input, output, and cached tokens, according to the published API rates for each model.\nA few important details:\n- Base plan pricing is not changing. Copilot Pro remains $10/month, Pro+ remains $39/month, Business remains $19/user/month, and Enterprise remains $39/user/month.\n- Code completions and Next Edit suggestions remain included in all plans and do not consume AI Credits.\n- Fallback experiences will no longer be available. Today, users who exhaust PRUs may fall back to a lower-cost model and continue working. Under the new model, usage will instead be governed by available credits and admin budget controls.\n- Copilot code review will also consume GitHub Actions minutes, in addition to GitHub AI Credits. These minutes are billed at the same per-minute rates as other GitHub Actions workflows.\nLast week, [we also rolled out temporary changes](https://github.blog/news-insights/company-news/changes-to-github-copilot-individual-plans/) to Copilot Individual plans, including Free, Pro, Pro+, and Student, and paused self-serve Copilot Business plan purchases. These were reliability and performance measures as we prepare for the broader transition to usage-based billing. We will loosen usage limits once usage-based billing is in effect.\nWhat this means for individuals\nCopilot Pro and Pro+ monthly subscriptions will include monthly AI Credits aligned to their current subscription prices:\n- Copilot Pro: $10/month, including $10 in monthly AI Credits\n- Copilot Pro+: $39/month, including $39 in monthly AI Credits\nUsers on a monthly Pro or Pro+ plan will automatically migrate to usage-based billing on June 1, 2026.\nUsers on annual Pro or Pro+ plans will remain on their existing plan with premium request-based pricing until their plan expires. [Model multipliers will increase on June 1 (see table)](https://docs.github.com/copilot/reference/copilot-billing/models-and-pricing#model-multipliers-for-annual-copilot-pro-and-copilot-pro-subscribers) for annual plan subscribers only. At expiration, they will transition to Copilot Free with the option to upgrade to a paid monthly plan. Alternatively, they may convert to a monthly paid plan before their annual plan expires, and we will provide prorated credits for the remaining value of their annual plan.\nWhat this means for businesses and enterprises\nCopilot Business and Copilot Enterprise monthly seat pricing remains unchanged:\n- Copilot Business: $19/user/month, including $19 in monthly AI Credits\n- Copilot Enterprise: $39/user/month, including $39 in monthly AI Credits\nTo support the transition, existing Copilot Business and Copilot Enterprise customers will automatically receive promotional included usage for June, July, and August:\n- Copilot Business: $30 in monthly AI Credits\n- Copilot Enterprise: $70 in monthly AI Credits\nWe are also introducing pooled included usage across a business, which helps eliminate stranded capacity. Instead of each user’s unused included usage being isolated, credits can be pooled across the organization.\nAdmins will also have new budget controls. They will be able to set budgets at the enterprise, cost center, and user levels. When the included pool is exhausted, organizations can choose whether to allow additional usage at published rates or cap spend.\nThe bottom line\nPlan prices aren’t changing. You’ll have full control over what you spend, tools to track your usage, and the option to purchase more AI Credits if and when you need them.\nIf you have questions, visit our documentation for [individuals](https://docs.github.com/copilot/concepts/billing/usage-based-billing-for-individuals) and for [businesses and enterprises](https://docs.github.com/copilot/concepts/billing/usage-based-billing-for-organizations-and-enterprises), and our [FAQ and related discussion](https://github.com/orgs/community/discussions/192948).\nWritten by\nMario Rodriguez leads the GitHub Product team as Chief Product Officer. His core identity is being a learner and his passion is creating developer tools—so much so that he has spent the last 20 years living that mission in leadership roles across Microsoft and GitHub. Mario most recently oversaw GitHub’s AI strategy and the GitHub Copilot product line, launching and growing Copilot across thousands of organizations and millions of users. Mario spends time outside of GitHub with his wife and two daughters. He also co-chairs and founded a charter school in an effort to progress education in rural regions of the United States.",
+    "error": null,
+    "elapsed_s": 8
+  },
+  {
+    "tool": "Codeium (Windsurf)",
+    "url": "https://windsurf.com/pricing",
+    "path": "a11y",
+    "actions": [
+      {
+        "turn": 1,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 13
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 2,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 3
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 3,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 7
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 4,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 1
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 5,
+        "actions": [
+          {
+            "type": "type",
+            "mark": 1,
+            "value": "user@example.com",
+            "clear": true
+          },
+          {
+            "type": "click",
+            "mark": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 6,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 5
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 7,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 9
+          }
+        ],
+        "outcome": "ok"
+      },
+      {
+        "turn": 8,
+        "actions": [
+          {
+            "type": "click",
+            "mark": 7
+          },
+          {
+            "type": "wait",
+            "seconds": 2
+          }
+        ],
+        "outcome": "ok | ok"
+      }
+    ],
+    "turns": 8,
+    "success": true,
+    "content": "Enter the verification code sent to user@example.com\nCheck your spam folder if you can't find it in your inbox.",
+    "error": null,
+    "elapsed_s": 8
+  },
+  {
+    "tool": "Amazon Q Developer",
+    "url": "https://aws.amazon.com/q/developer/pricing/",
+    "path": "a11y",
+    "actions": [
+      {
+        "turn": 1,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "click",
+            "mark": 13
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 2,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down",
+            "amount": 3
+          },
+          {
+            "type": "click",
+            "mark": 12
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 3,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "click",
+            "mark": 20
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 4,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "click",
+            "mark": 15
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 5,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "click",
+            "mark": 21
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 6,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "click",
+            "mark": 21
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 7,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "click",
+            "mark": 21
+          }
+        ],
+        "outcome": "ok | ok"
+      },
+      {
+        "turn": 8,
+        "actions": [
+          {
+            "type": "scroll",
+            "direction": "down"
+          },
+          {
+            "type": "click",
+            "mark": 21
+          }
+        ],
+        "outcome": "ok | ok"
+      }
+    ],
+    "turns": 8,
+    "success": true,
+    "content": "Amazon Q Developer pricing\nPricing Overview\nAmazon Q Developer reimagines the experience across the entire software development lifecycle (SDLC), making it faster and easier to build, secure, manage, and optimize applications on or off of AWS. Amazon Q Developer offers two pricing tiers.\nFree Tier: Advanced capabilities at zero cost | Pro Tier: Expanded limits $19/mo. per user | |\n|---|---|---|\nSummary | - Limited agentic requests per month\n- Access latest Claude models\n- Use in the IDE or CLI\n| Everything included in the Free tier, with - Increased limits of agentic requests\n- Increased limits for Java and .NET app transformation\n- Identity center support with admin dashboards and controls\n- IP indemnity\n|\nPricing Table\nFeature | Free | Pro |\n|---|---|---|\nIDE plugins and CLI |\n|\n|\nIncluded agentic requests (Q&A chat, agentic coding) | 50 agentic requests per month | Included (with limits) |\nAmazon Q Developer transformation capability for Java upgrades * | 1,000 lines of code per month | 4,000 lines of code per month per user pooled at account level. Extra lines of code available at $.003 per line of code submitted. * |\nAdministration |\n|\n|\nAdmin dashboard with user and policy management** | No | Yes |\nSecurity and privacy |\n|\n|\nReference tracking | Yes | Yes |\nSuppress public code suggestions | Yes | Yes |\nData collection | Opt-out available | Automatically opted out |\nIP indemnity | No | Yes |\nAWS Console |\n|\n|\nGeneral Q&A | Yes | Yes |\nDiagnose common errors in the console | Yes | Yes |\nTo maintain the performance of the service and to ensure appropriate usage of Amazon Q Developer, the usage for an account might be updated depending on regional factors, payment history, fraudulent usage, or approval of a quota increase request. To learn more, see [service limits](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/quotas.html).\n*The Amazon Q Developer capabilities for Java upgrades are available to Amazon Q Developer Free Tier and Amazon Q Developer Pro Tier users. Pricing charges and usage are calculated against limits based on the number of lines of code (LOC) that you submit to Amazon Q. Only those submissions where you receive suggested upgrade code back are counted while those where you stop the job before completion or when a failure is encountered during the upgrade are not included. Noncode lines in repositories such as comments and empty lines are not counted.\nYou can get started with the Amazon Q Developer transformation capability at no cost as part of the Amazon Q Developer Free Tier. Amazon Q Developer Free Tier users can upgrade 1,000 LOC per month, per user. If your code exceeds this limit, consider submitting a smaller buildable unit, like a module, or subscribe to the Amazon Q Developer Pro Tier for higher allocation limits and pay-per-use upgrades.\nAmazon Q Developer Pro subscription are allocated 4,000 LOC per month for upgrades using Amazon Q Developer transformation capabilities for Java upgrades. These allocations are aggregated at the AWS payer-account level every month. Thus, if you have 100 active Amazon Q subscriptions across all your linked AWS accounts, you can submit 400,000 LOC per month for upgrades before incurring additional charges. Usage that exceeds this allocation is charged $0.003 per LOC submitted.\nAmazon Q Developer offers a perpetual Free Tier with monthly limits available to users logged in as an AWS Identity and Access Management (IAM) user or AWS Builder ID user.\n- Free Tier limits in the IDE are available only to Builder ID users.\n- Free Tier limits apply at the account level when logged in as an IAM user, or at the user level for AWS Builder ID users.\n- Only users with access to the AWS console can use the Amazon Q Developer Free Tier limits in the AWS Console.\n- Chat interactions through the AWS Console Mobile Application, AWS Chatbot, and AWS marketing and documentation pages are currently exclusively governed by Free Tier limits.\nMembers with subscriptions linked to an organization with IAM Identity Center benefit from Pro Tier limits at the user level. Note that Amazon Q Developer agent for code transformation limits are pooled at the payer account level for paid subscriptions.\n** Amazon Q Developer Free Tier users can upgrade to a personal Pro Tier subscription using their Builder ID and an AWS account. If upgrading with Builder ID and not the IAM Identity Center, you will not have access to this feature using Pro Tier. If you wish to utilize this feature, please sign up for Pro Tier using IAM Identity Center.\nAmazon Q Developer Pricing FAQs\n[Open all](/q/developer/pricing/?p=qdev&z=subnav&loc=7)\nAn agentic request is any Q&A chat or agentic coding interaction with Q Developer through either the IDE or Command Line Interface (CLI). All requests made through both the IDE and CLI contribute to your usage limits.\nSee [Supported Identity Center Regions for Amazon Q Developer](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-pro-tier-setting-up-access.html#idc-regions) for more information on the Identity Center regions in which Amazon Q Developer subscriptions are supported.\nActivating the Amazon Q Developer Pro subscription refers to the specific actions or events that trigger the start of the monthly subscription fee for a user. Signing in to Amazon Q chat in the console or other AWS pages, signing in to Amazon Q chat in an IDE, or downloading the toolkit will not incur the subscription fee. The activation occurs when you perform activities with Amazon Q Developer such as:\n- Amazon Q Developer agentic coding: Requesting Q Developer to generate a plan for solving a software development task.\n- Amazon Q Developer agents for transformation: Requesting the AI agents to generate a plan for transforming code.\n- Code completions within Amazon Q Developer.\nPerforming any of these activities within Amazon Q Developer will trigger the activation of your Amazon Q Developer subscription, which will then renew monthly until canceled.\nNo, the monthly subscription fee for Amazon Q Developer Pro is charged on a per use basis. If one member of an AWS IAM Identity Center group activates the subscription, only that individual user will be billed the monthly fee until canceled. Other members of the AWS IAM Identity Center group will not be charged for the subscription unless they also perform one of the subscription-activating actions themselves.\nThe Amazon Q Developer monthly subscription fee is charged per user, per month.\nThe subscription fee is pro-rated for the first month the user is subscribed based on the number of days remaining when the subscription is activated. The subscription will then be billed the fee per month until canceled (after the first month, pro-rated if applicable)\nOn the AWS estimated bill, each user's daily subscription usage for Amazon Q Developer is measured as a fraction of the month summed across all users. For example, for the $19 Pro plan with approximately 30 days in a month, one user would appear as 0.0333 of a user on a given day (1/30 of a month). Their daily bill would be $19 * 0.0333 = $0.63 (totaling $19 per month).\nFor an example with 10 users on a daily bill:\nDaily Users: 10\nDaily User Fraction: 10 * 0.0333 = 0.333\nDaily Cost: 0.333 * $19 per user-month = $6.33\nSo for 10 users, the estimated daily bill would show:\nDaily Users: 0.333\nDaily Cost: $6.33\nTo calculate the monthly cost: Monthly Users: 0.333 * 30 days = 10 (essentially 10 users for the full month) Monthly Cost: $6.333 * 30 days = $190 (or 10 users x $19 fee per month)\nIf you choose to cancel a user's Amazon Q Developer subscription before the end of the month, you will be charged the full month's subscription fee. Users will lose access to the Q Developer features upon cancellation. This is to protect against unauthorized access to your resources after cancellation. We recommend reviewing your users' access requirements and associated subscription needs carefully before initiating any changes to your Q Developer subscription. It's best to wait until the end of the billing cycle to cancel your subscription and avoid being charged for a full month you don't need.\nUnsubscribing from the Amazon Q Developer subscription can be done through the Amazon Q console. The process varies based on your permissions and whether you are a member account administrator or organization account administrator. To unsubscribe, navigate to the Subscriptions page in the Amazon Q Developer console, select the user(s) you want to unsubscribe, and choose the \"Unsubscribe\" action. Confirm in the pop-up window. For more detailed steps and information on managing AWS accounts and unsubscribing users within your organization, [refer to the official documentation](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-admin-%20setup-subscribe-general.html#q-admin-setup-unsubscribe).\nRemember, unsubscribing a user will cancel their access to the Amazon Q Developer features and capabilities immediately upon cancellation. If you choose to cancel a user's Amazon Q Developer subscription before the end of the month, you will be charged the full month's subscription fee.\nQ Developer transformation customers on the Pro tier receive 4,000 LOC per month per user for Amazon Q Developer agents for transformation. These allocations are aggregated at the AWS payer-account level every month. Usage exceeding the Q Developer Pro Tier allocation is charged at $0.003 per LOC submitted for transformation. Your bill will show the total LOC usage for transformation and any applicable discounts based on your Q Developer Pro Tier subscriptions. Each Pro Tier subscription provides a 4,000 LOC monthly allocation, pooled at the payer-account level. The calculation and discount are clearly shown on your bill. The billing system meters the LOC usage for transformation, while the discount is calculated based on the number of Q Developer Pro subscriptions you have. Your bill will show the metered usage, the discount applied based on your subscription count, as well as any overages charged. For example, if you have 10 Amazon Q Developer Pro subscriptions, you get 40,000 LOC (10 x 4,000) included per month. If your total usage is 50,000 LOC, you'll be charged for 10,000 LOC at $0.003/LOC, which is $30. Your bill will clearly show the 50,000 LOC usage, the Bundled discount of $120 based on your 10 subscriptions (10 users * 4K lines of code * $.003 =$120), and the $30 overage charge.\nCurrently, the Amazon Q Developer agent for transformation reverts to pay-as-you-go pricing after hitting your 4K pooled lines of code. To proactively manage your usage and avoid unexpected charges, you can take several steps. First, regularly monitor your usage in the Cost and Usage Report in the AWS console. This will allow you to track your lines of code consumption and stay within your 4K pooled lines limit. Additionally, you can set usage alerts through AWS Budgets to receive notifications when your usage approaches the limit, giving you the opportunity to optimize your processes before incurring overage fees.\nTo further optimize your usage, review your transformation workflows and identify ways to reduce the number of lines of code processed, such as by refining your input data or transformation logic. This can help you stay within the included 4K pooled lines and avoid pay-as-you-go charges.\nBy closely monitoring your usage, setting alerts, optimizing your processes, you can effectively manage your Amazon Q Developer agents for transformation usage and prevent overage charges.",
+    "error": null,
+    "elapsed_s": 8
+  }
+]

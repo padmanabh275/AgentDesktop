@@ -1,0 +1,1 @@
+Compare 5 AI coding tools by free plan and paid plan. The agent must perform at least three visible browser actions, such as search, filter, sort, open product/detail pages, switch tabs, expand hidden content, or submit a form. Passive scraping from search snippets is not accepted. The final output must include a structured comparison table.

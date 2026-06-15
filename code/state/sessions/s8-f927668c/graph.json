@@ -1,0 +1,555 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Product comparisons require fresh data; memory hits are not sufficient.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR specs and price"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR 2025 2026"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR value for money"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price INR, pros"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR specs and price"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR 2025 2026"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR value for money"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price INR, pros"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 7.283762454986572,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR specs and price"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {
+          "question": "best laptop under 80000 INR specs and price",
+          "sources": [
+            {
+              "url": "https://www.youtube.com/watch?v=666FtQDRNe0",
+              "title": "\ud83d\udd25Top Picks\ud83d\udd25Best Laptops Under 80000 In India 2026\ud83d\udd25Best Gaming Laptop Under 80000"
+            },
+            {
+              "url": "https://www.livemint.com/technology/gadgets/10-gaming-laptops-under-rs-80-000-i-would-trust-for-smooth-and-serious-gaming-11770094243285.html",
+              "title": "10 gaming laptops under  \u20b980,000 I would trust for smooth and serious gaming | Mint"
+            },
+            {
+              "url": "https://www.mysmartprice.com/computer/pricelist/laptops-under-80000-price-list-in-india.html",
+              "title": "Best Laptops Under 80,000 In India (Jun 2026) | Mysmartprice"
+            }
+          ],
+          "findings": [
+            "The best laptop under \u20b980,000 for gaming is the Dell SmartChoice G15-5530 with Intel Core i5 13th Gen-13450HX and NVIDIA RTX 3050-6GB. It has a 15.6-inch FHD 120Hz display and weighs 2.65Kg.",
+            "Another option is the Lenovo Yoga Slim 6 14IRH8 with 12th Gen Intel Core i5 12450HX and RTX 3050-6GB. It has a 14-inch FHD 144Hz display and weighs 2.4Kg.",
+            "The ASUS TUF A15 (2025) is also a good choice with AMD Ryzen 7 7445HS and RTX 3050 4GB. It has a 15.6-inch FHD 144Hz anti-glare display and weighs 2.3Kg."
+          ]
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 248.26019859313965,
+        "provider": "ollama",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR 2025 2026"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 206.16172647476196,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:3"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR value for money"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "researcher",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 112.08089804649353,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:4"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:2",
+        "n:3",
+        "n:4"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price INR, pros"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "distiller",
+        "output": {
+          "fields": {
+            "laptops": [
+              {
+                "model": "Dell SmartChoice G15-5530",
+                "CPU": "Intel Core i5 13th Gen-13450HX",
+                "RAM": "not specified",
+                "storage": "not specified",
+                "price_INR": "under \u20b980,000",
+                "pros": "15.6-inch FHD 120Hz display, NVIDIA RTX 3050-6GB, weighs 2.65Kg"
+              },
+              {
+                "model": "Lenovo Yoga Slim 6 14IRH8",
+                "CPU": "12th Gen Intel Core i5 12450HX",
+                "RAM": "not specified",
+                "storage": "not specified",
+                "price_INR": "under \u20b980,000",
+                "pros": "14-inch FHD 144Hz display, NVIDIA RTX 3050-6GB, weighs 2.4Kg"
+              },
+              {
+                "model": "ASUS TUF A15 (2025)",
+                "CPU": "AMD Ryzen 7 7445HS",
+                "RAM": "not specified",
+                "storage": "not specified",
+                "price_INR": "under \u20b980,000",
+                "pros": "15.6-inch FHD 144Hz anti-glare display, RTX 3050 4GB, weighs 2.3Kg"
+              }
+            ]
+          },
+          "rationale": "The findings provide details on three laptops under \u20b980,000, including their models, CPUs, displays, and weights."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 11.314682960510254,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:5"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:5"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "skipped",
+      "id": "n:6"
+    },
+    {
+      "skill": "critic",
+      "inputs": [
+        "USER_QUERY",
+        "n:5"
+      ],
+      "metadata": {
+        "target": "n:5",
+        "child": "n:6"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "critic",
+        "output": {
+          "verdict": "fail",
+          "rationale": "The output is missing critical fields such as RAM and storage, which were not specified in the input but are essential for a complete comparison of laptops."
+        },
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 5.238092422485352,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:7"
+    },
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {
+        "failure_report": "critic failed target=n:5 child=n:6 rationale=The output is missing critical fields such as RAM and storage, which were not specified in the input but are essential for a complete comparison of laptops.",
+        "recovers": "n:5",
+        "recovery_reason": "critic_fail"
+      },
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Use fresh data to compare three laptops, ensuring to include critical specifications like RAM and storage.",
+          "nodes": [
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rA",
+                "question": "best laptop under 80000 INR specs and price, including RAM and storage"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rB",
+                "question": "second best laptop under 80000 INR specs and price, including RAM and storage"
+              }
+            },
+            {
+              "skill": "researcher",
+              "inputs": [],
+              "metadata": {
+                "label": "rC",
+                "question": "third best laptop under 80000 INR specs and price, including RAM and storage"
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:rA",
+                "n:rB",
+                "n:rC"
+              ],
+              "metadata": {
+                "label": "d1",
+                "question": "model, CPU, RAM, storage, price INR, pros"
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:d1"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rA",
+              "question": "best laptop under 80000 INR specs and price, including RAM and storage"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rB",
+              "question": "second best laptop under 80000 INR specs and price, including RAM and storage"
+            }
+          },
+          {
+            "skill": "researcher",
+            "inputs": [],
+            "metadata": {
+              "label": "rC",
+              "question": "third best laptop under 80000 INR specs and price, including RAM and storage"
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:rA",
+              "n:rB",
+              "n:rC"
+            ],
+            "metadata": {
+              "label": "d1",
+              "question": "model, CPU, RAM, storage, price INR, pros"
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:d1"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 10.75342869758606,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:8"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rA",
+        "question": "best laptop under 80000 INR specs and price, including RAM and storage"
+      },
+      "status": "running",
+      "id": "n:9"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rB",
+        "question": "second best laptop under 80000 INR specs and price, including RAM and storage"
+      },
+      "status": "running",
+      "id": "n:10"
+    },
+    {
+      "skill": "researcher",
+      "inputs": [],
+      "metadata": {
+        "label": "rC",
+        "question": "third best laptop under 80000 INR specs and price, including RAM and storage"
+      },
+      "status": "running",
+      "id": "n:11"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:9",
+        "n:10",
+        "n:11"
+      ],
+      "metadata": {
+        "label": "d1",
+        "question": "model, CPU, RAM, storage, price INR, pros"
+      },
+      "status": "pending",
+      "id": "n:12"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:12"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:13"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    },
+    {
+      "source": "n:1",
+      "target": "n:3"
+    },
+    {
+      "source": "n:1",
+      "target": "n:4"
+    },
+    {
+      "source": "n:2",
+      "target": "n:5"
+    },
+    {
+      "source": "n:3",
+      "target": "n:5"
+    },
+    {
+      "source": "n:4",
+      "target": "n:5"
+    },
+    {
+      "source": "n:5",
+      "target": "n:7"
+    },
+    {
+      "source": "n:7",
+      "target": "n:6"
+    },
+    {
+      "source": "n:8",
+      "target": "n:9"
+    },
+    {
+      "source": "n:8",
+      "target": "n:10"
+    },
+    {
+      "source": "n:8",
+      "target": "n:11"
+    },
+    {
+      "source": "n:9",
+      "target": "n:12"
+    },
+    {
+      "source": "n:10",
+      "target": "n:12"
+    },
+    {
+      "source": "n:11",
+      "target": "n:12"
+    },
+    {
+      "source": "n:12",
+      "target": "n:13"
+    }
+  ]
+}

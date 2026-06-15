@@ -1,0 +1,12 @@
+{
+  "arguments": {
+    "urls": [
+      "file:///C:/Users/Padmanabh/OneDrive/Documents/S10_Comp_Desktop/code/computer/fixtures/canvas_only.html"
+    ]
+  },
+  "result_summary": "✅ Launched file:///C:/Users/Padmanabh/OneDrive/Documents/S10_Comp_Desktop/code/computer/fixtures/canvas_only.html (pid 27444) in background.",
+  "t_ms_from_session_start": 6295,
+  "t_start_ms_from_session_start": 67,
+  "timestamp": "1781513972.480",
+  "tool": "launch_app"
+}

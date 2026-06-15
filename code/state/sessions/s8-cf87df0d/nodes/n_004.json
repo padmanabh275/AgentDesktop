@@ -1,0 +1,11 @@
+{
+  "node_id": "n:4",
+  "skill": "browser",
+  "status": "running",
+  "inputs": [],
+  "result": null,
+  "prompt_sent": null,
+  "started_at": 1780923982.0074866,
+  "completed_at": null,
+  "retries": 0
+}

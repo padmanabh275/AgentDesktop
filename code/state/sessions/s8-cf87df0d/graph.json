@@ -1,0 +1,445 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Utilize the existing knowledge to perform browser actions for each AI coding tool and gather pricing information.",
+          "nodes": [
+            {
+              "skill": "browser",
+              "inputs": [],
+              "metadata": {
+                "label": "bCursor",
+                "url": "https://www.cursor.so/pricing",
+                "goal": "Extract the details of the free and paid plans for Cursor."
+              }
+            },
+            {
+              "skill": "browser",
+              "inputs": [],
+              "metadata": {
+                "label": "bCopilot",
+                "url": "https://github.com/features/copilot/pricing",
+                "goal": "Extract the details of the free and paid plans for GitHub Copilot."
+              }
+            },
+            {
+              "skill": "browser",
+              "inputs": [],
+              "metadata": {
+                "label": "bCodeium",
+                "url": "https://www.codeium.com/pricing",
+                "goal": "Extract the details of the free and paid plans for Codeium."
+              }
+            },
+            {
+              "skill": "browser",
+              "inputs": [],
+              "metadata": {
+                "label": "bTabnine",
+                "url": "https://www.tabnine.com/pricing",
+                "goal": "Extract the details of the free and paid plans for Tabnine."
+              }
+            },
+            {
+              "skill": "browser",
+              "inputs": [],
+              "metadata": {
+                "label": "bAmazonQ",
+                "url": "https://aws.amazon.com/codeguru/pricing/",
+                "goal": "Extract the details of the free and paid plans for Amazon Q Developer."
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:bCursor"
+              ],
+              "metadata": {
+                "label": "dCursor",
+                "question": "Extract structured fields from the pricing details of Cursor."
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:bCopilot"
+              ],
+              "metadata": {
+                "label": "dCopilot",
+                "question": "Extract structured fields from the pricing details of GitHub Copilot."
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:bCodeium"
+              ],
+              "metadata": {
+                "label": "dCodeium",
+                "question": "Extract structured fields from the pricing details of Codeium."
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:bTabnine"
+              ],
+              "metadata": {
+                "label": "dTabnine",
+                "question": "Extract structured fields from the pricing details of Tabnine."
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:bAmazonQ"
+              ],
+              "metadata": {
+                "label": "dAmazonQ",
+                "question": "Extract structured fields from the pricing details of Amazon Q Developer."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:dCursor",
+                "n:dCopilot",
+                "n:dCodeium",
+                "n:dTabnine",
+                "n:dAmazonQ"
+              ],
+              "metadata": {
+                "label": "out"
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "browser",
+            "inputs": [],
+            "metadata": {
+              "label": "bCursor",
+              "url": "https://www.cursor.so/pricing",
+              "goal": "Extract the details of the free and paid plans for Cursor."
+            }
+          },
+          {
+            "skill": "browser",
+            "inputs": [],
+            "metadata": {
+              "label": "bCopilot",
+              "url": "https://github.com/features/copilot/pricing",
+              "goal": "Extract the details of the free and paid plans for GitHub Copilot."
+            }
+          },
+          {
+            "skill": "browser",
+            "inputs": [],
+            "metadata": {
+              "label": "bCodeium",
+              "url": "https://www.codeium.com/pricing",
+              "goal": "Extract the details of the free and paid plans for Codeium."
+            }
+          },
+          {
+            "skill": "browser",
+            "inputs": [],
+            "metadata": {
+              "label": "bTabnine",
+              "url": "https://www.tabnine.com/pricing",
+              "goal": "Extract the details of the free and paid plans for Tabnine."
+            }
+          },
+          {
+            "skill": "browser",
+            "inputs": [],
+            "metadata": {
+              "label": "bAmazonQ",
+              "url": "https://aws.amazon.com/codeguru/pricing/",
+              "goal": "Extract the details of the free and paid plans for Amazon Q Developer."
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:bCursor"
+            ],
+            "metadata": {
+              "label": "dCursor",
+              "question": "Extract structured fields from the pricing details of Cursor."
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:bCopilot"
+            ],
+            "metadata": {
+              "label": "dCopilot",
+              "question": "Extract structured fields from the pricing details of GitHub Copilot."
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:bCodeium"
+            ],
+            "metadata": {
+              "label": "dCodeium",
+              "question": "Extract structured fields from the pricing details of Codeium."
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:bTabnine"
+            ],
+            "metadata": {
+              "label": "dTabnine",
+              "question": "Extract structured fields from the pricing details of Tabnine."
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:bAmazonQ"
+            ],
+            "metadata": {
+              "label": "dAmazonQ",
+              "question": "Extract structured fields from the pricing details of Amazon Q Developer."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:dCursor",
+              "n:dCopilot",
+              "n:dCodeium",
+              "n:dTabnine",
+              "n:dAmazonQ"
+            ],
+            "metadata": {
+              "label": "out"
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 17.786593914031982,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "browser",
+      "inputs": [],
+      "metadata": {
+        "label": "bCursor",
+        "url": "https://www.cursor.so/pricing",
+        "goal": "Extract the details of the free and paid plans for Cursor."
+      },
+      "status": "running",
+      "id": "n:2"
+    },
+    {
+      "skill": "browser",
+      "inputs": [],
+      "metadata": {
+        "label": "bCopilot",
+        "url": "https://github.com/features/copilot/pricing",
+        "goal": "Extract the details of the free and paid plans for GitHub Copilot."
+      },
+      "status": "running",
+      "id": "n:3"
+    },
+    {
+      "skill": "browser",
+      "inputs": [],
+      "metadata": {
+        "label": "bCodeium",
+        "url": "https://www.codeium.com/pricing",
+        "goal": "Extract the details of the free and paid plans for Codeium."
+      },
+      "status": "running",
+      "id": "n:4"
+    },
+    {
+      "skill": "browser",
+      "inputs": [],
+      "metadata": {
+        "label": "bTabnine",
+        "url": "https://www.tabnine.com/pricing",
+        "goal": "Extract the details of the free and paid plans for Tabnine."
+      },
+      "status": "running",
+      "id": "n:5"
+    },
+    {
+      "skill": "browser",
+      "inputs": [],
+      "metadata": {
+        "label": "bAmazonQ",
+        "url": "https://aws.amazon.com/codeguru/pricing/",
+        "goal": "Extract the details of the free and paid plans for Amazon Q Developer."
+      },
+      "status": "running",
+      "id": "n:6"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:2"
+      ],
+      "metadata": {
+        "label": "dCursor",
+        "question": "Extract structured fields from the pricing details of Cursor."
+      },
+      "status": "pending",
+      "id": "n:7"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:3"
+      ],
+      "metadata": {
+        "label": "dCopilot",
+        "question": "Extract structured fields from the pricing details of GitHub Copilot."
+      },
+      "status": "pending",
+      "id": "n:8"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:4"
+      ],
+      "metadata": {
+        "label": "dCodeium",
+        "question": "Extract structured fields from the pricing details of Codeium."
+      },
+      "status": "pending",
+      "id": "n:9"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:5"
+      ],
+      "metadata": {
+        "label": "dTabnine",
+        "question": "Extract structured fields from the pricing details of Tabnine."
+      },
+      "status": "pending",
+      "id": "n:10"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:6"
+      ],
+      "metadata": {
+        "label": "dAmazonQ",
+        "question": "Extract structured fields from the pricing details of Amazon Q Developer."
+      },
+      "status": "pending",
+      "id": "n:11"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:7",
+        "n:8",
+        "n:9",
+        "n:10",
+        "n:11"
+      ],
+      "metadata": {
+        "label": "out"
+      },
+      "status": "pending",
+      "id": "n:12"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    },
+    {
+      "source": "n:1",
+      "target": "n:3"
+    },
+    {
+      "source": "n:1",
+      "target": "n:4"
+    },
+    {
+      "source": "n:1",
+      "target": "n:5"
+    },
+    {
+      "source": "n:1",
+      "target": "n:6"
+    },
+    {
+      "source": "n:2",
+      "target": "n:7"
+    },
+    {
+      "source": "n:3",
+      "target": "n:8"
+    },
+    {
+      "source": "n:4",
+      "target": "n:9"
+    },
+    {
+      "source": "n:5",
+      "target": "n:10"
+    },
+    {
+      "source": "n:6",
+      "target": "n:11"
+    },
+    {
+      "source": "n:7",
+      "target": "n:12"
+    },
+    {
+      "source": "n:8",
+      "target": "n:12"
+    },
+    {
+      "source": "n:9",
+      "target": "n:12"
+    },
+    {
+      "source": "n:10",
+      "target": "n:12"
+    },
+    {
+      "source": "n:11",
+      "target": "n:12"
+    }
+  ]
+}

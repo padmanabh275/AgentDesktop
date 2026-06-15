@@ -3,8 +3,7 @@
 .env.*
 !.env.example
 
-# runtime state
-state/
+# runtime state (sessions/ trajectories tracked for evidence; sandbox stays local)
 sandbox/
 usage.json
 

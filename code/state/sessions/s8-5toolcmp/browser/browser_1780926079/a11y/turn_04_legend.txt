@@ -1,0 +1,25 @@
+[1]<a>Skip to content</a>
+[2]<a>Homepage</a>
+[3]<a>Product</a>
+[4]<a>Enterprise</a>
+[5]<a>Pricing</a>
+[6]<a>Resources</a>
+[7]<a>Sign in</a>
+[8]<a>Contact sales</a>
+[9]<a>Download</a>
+[10]<button>What is the right plan for me? ↓</button>
+[11]<button>What are my payment options? ↓</button>
+[12]<a></a>
+[13]<button>How does usage-based pricing work? ↓</button>
+[14]<a></a>
+[15]<button>How can I see and manage Cursor's usage in my organization? ↓</button>
+[16]<a></a>
+[17]<button>How does Cursor use my data? ↓</button>
+[18]<a></a>
+[19]<button>Can I buy Cursor from a reseller or third party? ↓</button>
+[20]<a></a>
+[21]<button>Where can I ask more questions? ↓</button>
+[22]<a></a>
+[23]<a></a>
+[24]<a>Download ⤓</a>
+[25]<a>Contact Sales</a>

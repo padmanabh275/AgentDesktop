@@ -1,0 +1,50 @@
+[1]<a>Homepage</a>
+[2]<button>Platform</button>
+[3]<button>Solutions</button>
+[4]<button>Resources</button>
+[5]<button>Open Source</button>
+[6]<button>Enterprise</button>
+[7]<a>Pricing</a>
+[8]<button>Search or jump to…</button>
+[9]<a>Sign in</a>
+[10]<label>Username or email address</label>
+[11]<input>login</input>
+[12]<label>Password</label>
+[13]<input>password</input>
+[14]<a>Forgot password?</a>
+[15]<input>Sign in</input>
+[16]<a>or continue with other methods</a>
+[17]<a>Sign up</a>
+[18]<button>Appearance settings</button>
+[19]<label>Find code, projects, and people on GitHub:</label>
+[20]<input>q</input>
+[21]<button>Search</button>
+[22]<a>Contact Support</a>
+[23]<a>GitHub Status</a>
+[24]<a>@githubstatus</a>
+[25]<a>Go to GitHub homepage</a>
+[26]<a>Subscribe</a>
+[27]<a>Features</a>
+[28]<a>Enterprise</a>
+[29]<a>Copilot</a>
+[30]<a>AI</a>
+[31]<a>Security</a>
+[32]<a>Pricing</a>
+[33]<a>Developer API</a>
+[34]<a>Partners</a>
+[35]<a>Education</a>
+[36]<a>GitHub CLI</a>
+[37]<a>GitHub Desktop</a>
+[38]<a>GitHub Mobile</a>
+[39]<a>Docs</a>
+[40]<a>Community Forum</a>
+[41]<a>Professional Services</a>
+[42]<a>Premium Support</a>
+[43]<a>Skills</a>
+[44]<a>Status</a>
+[45]<a>About</a>
+[46]<a>Why GitHub</a>
+[47]<a>Customer stories</a>
+[48]<a>Blog</a>
+[49]<a>The ReadME Project</a>
+[50]<a>Careers</a>

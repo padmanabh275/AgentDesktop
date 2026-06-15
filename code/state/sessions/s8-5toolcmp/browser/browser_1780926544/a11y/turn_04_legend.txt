@@ -1,0 +1,20 @@
+[1]<a>Skip to main content link</a>
+[2]<button>English</button>
+[3]<a>Contact us</a>
+[4]<a>AWS Marketplace</a>
+[5]<button>Support</button>
+[6]<button>My account</button>
+[7]<button>AWS Profile</button>
+[8]<a>nav-item-logo-link</a>
+[9]<button>Search</button>
+[10]<a>Sign in to console</a>
+[11]<a role="button">Create account</a>
+[12]<button>Open feedback</button>
+[13]<a>Overview</a>
+[14]<li role="button">Features submenu</li>
+[15]<a>Pricing</a>
+[16]<a>Documentation</a>
+[17]<li role="button">Resources submenu</li>
+[18]<li role="button">More menu</li>
+[19]<a>Amazon Q</a>
+[20]<a>Amazon Q Developer</a>

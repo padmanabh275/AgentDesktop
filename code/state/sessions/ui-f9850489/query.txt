@@ -1,0 +1,1 @@
+Open calculator and add 242 plus 2432 and return the answer

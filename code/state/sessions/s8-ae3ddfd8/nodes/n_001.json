@@ -1,0 +1,13 @@
+{
+  "node_id": "n:1",
+  "skill": "planner",
+  "status": "running",
+  "inputs": [
+    "USER_QUERY"
+  ],
+  "result": null,
+  "prompt_sent": null,
+  "started_at": 1780935163.0331736,
+  "completed_at": null,
+  "retries": 0
+}

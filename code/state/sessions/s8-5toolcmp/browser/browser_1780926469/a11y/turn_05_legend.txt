@@ -1,0 +1,7 @@
+[1]<input>you@example.com</input>
+[2]<button>Continue →</button>
+[3]<button>Continue with Google</button>
+[4]<button>Continue with GitHub</button>
+[5]<button>Continue with Devin</button>
+[6]<button>Continue with SSO</button>
+[7]<a>Sign up</a>

@@ -1,0 +1,1 @@
+{"browser":[{"agent":"browser","provider":"openai","calls":55,"in_tok":72563,"out_tok":4059,"total_latency_ms":148965,"total_retries":0,"ok":55,"errors":0,"dollars":0.01332}]}

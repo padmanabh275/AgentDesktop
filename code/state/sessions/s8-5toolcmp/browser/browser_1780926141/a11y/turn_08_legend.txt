@@ -1,0 +1,20 @@
+[1]<summary>Environment deployment branches and secrets</summary>
+[2]<summary>3,000 CI/CD minutes/month Free for public repositories</summary>
+[3]<summary>2GB of Packages storage Free for public repositories</summary>
+[4]<summary>Web-based support</summary>
+[5]<summary>GitHub Secret Protection</summary>
+[6]<summary>GitHub Code Security</summary>
+[7]<summary>FedRAMP Tailored Authority to Operate (ATO)</summary>
+[8]<summary>SAML single sign-on</summary>
+[9]<summary>Advanced auditing</summary>
+[10]<summary>GitHub Connect</summary>
+[11]<summary>50,000 CI/CD minutes/month Free for public repositories</summary>
+[12]<summary>50GB of Packages storage Free for public repositories</summary>
+[13]<summary>Premium support</summary>
+[14]<a></a>
+[15]<a>GitHub Copilot Get started for free with up to 2,000 completions per month. Comp</a>
+[16]<a>New GitHub Models Bring industry-leading AI into your workflow, securely, scalab</a>
+[17]<a>GitHub Advanced Security Gain peace of mind with our security, privacy, and resp</a>
+[18]<a>GitHub Codespaces Starting at $0.18 per hour of compute and $0.07 per GB of stor</a>
+[19]<a>Preview GitHub sandbox (public preview) Run Copilot agent workflows in isolated,</a>
+[20]<a>Git Large File Storage $5 per month for 50 GB bandwidth and 50 GB of storage. Le</a>

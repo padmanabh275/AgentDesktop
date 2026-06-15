@@ -1,0 +1,41 @@
+[1]<a>Skip to main content link</a>
+[2]<button>English</button>
+[3]<a>Contact us</a>
+[4]<a>AWS Marketplace</a>
+[5]<button>Support</button>
+[6]<button>My account</button>
+[7]<button>AWS Profile</button>
+[8]<a>nav-item-logo-link</a>
+[9]<a>AWS Summits</a>
+[10]<button role="button">Discover AWS</button>
+[11]<button role="button">Products</button>
+[12]<button role="button">Solutions</button>
+[13]<button role="button">Pricing</button>
+[14]<button role="button">Resources</button>
+[15]<button>Search</button>
+[16]<a>Sign in to console</a>
+[17]<a role="button">Create account</a>
+[18]<button role="button">Close</button>
+[19]<a>AWS Pricing</a>
+[20]<a>AWS Pricing Calculator</a>
+[21]<a>AWS Free Tier</a>
+[22]<a>AWS Offers</a>
+[23]<a>AWS Savings Plans</a>
+[24]<a>Amazon S3</a>
+[25]<a>Amazon Bedrock</a>
+[26]<a>Amazon RDS</a>
+[27]<a>Amazon EC2</a>
+[28]<a>Amazon SageMaker</a>
+[29]<a>Browse all product pricing</a>
+[30]<button>Open feedback</button>
+[31]<a>Overview</a>
+[32]<li role="button">Features submenu</li>
+[33]<a>Pricing</a>
+[34]<a>Documentation</a>
+[35]<li role="button">Resources submenu</li>
+[36]<a>Get started</a>
+[37]<a>Amazon Q</a>
+[38]<a>Amazon Q Developer</a>
+[39]<button>I can connect you with an AWS sales representative if you like to learn more abo</button>
+[40]<button>Need more info? Highlight any text to get an explanation generated with AWS gene</button>
+[41]<button>Ask a Question</button>

@@ -1,0 +1,42 @@
+[1]<a>Join for free</a>
+[2]<summary>Unlimited public/private repositories</summary>
+[3]<summary>Dependabot security and version updates</summary>
+[4]<summary>2,000 CI/CD minutes/month Free for public repositories</summary>
+[5]<summary>500MB of Packages storage Free for public repositories</summary>
+[6]<summary>Issues & Projects</summary>
+[7]<summary>Community support</summary>
+[8]<summary>GitHub Codespaces Access</summary>
+[9]<a></a>
+[10]<a>Continue with Team</a>
+[11]<summary>Access to GitHub Codespaces</summary>
+[12]<summary>Repository rules</summary>
+[13]<summary>Multiple reviewers in pull requests</summary>
+[14]<summary>Draft pull requests</summary>
+[15]<summary>Code owners</summary>
+[16]<summary>Required reviewers</summary>
+[17]<summary>Pages and Wikis</summary>
+[18]<summary>Environment deployment branches and secrets</summary>
+[19]<summary>3,000 CI/CD minutes/month Free for public repositories</summary>
+[20]<summary>2GB of Packages storage Free for public repositories</summary>
+[21]<summary>Web-based support</summary>
+[22]<summary>GitHub Secret Protection</summary>
+[23]<summary>GitHub Code Security</summary>
+[24]<a>Start a free trial</a>
+[25]<a>Contact Sales</a>
+[26]<summary>Data residency</summary>
+[27]<a></a>
+[28]<a></a>
+[29]<summary>Enterprise Managed Users</summary>
+[30]<summary>User provisioning through SCIM</summary>
+[31]<summary>Enterprise Account to centrally manage multiple organizations</summary>
+[32]<summary>Environment protection rules</summary>
+[33]<summary>Repository rules</summary>
+[34]<summary>Audit Log API</summary>
+[35]<summary>SOC1, SOC2, type 2 reports annually</summary>
+[36]<summary>FedRAMP Tailored Authority to Operate (ATO)</summary>
+[37]<summary>SAML single sign-on</summary>
+[38]<summary>Advanced auditing</summary>
+[39]<summary>GitHub Connect</summary>
+[40]<summary>50,000 CI/CD minutes/month Free for public repositories</summary>
+[41]<summary>50GB of Packages storage Free for public repositories</summary>
+[42]<summary>Premium support</summary>

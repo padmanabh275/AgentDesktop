@@ -1,0 +1,13 @@
+{
+  "arguments": {
+    "keys": [
+      "Ctrl",
+      "N"
+    ]
+  },
+  "result_summary": "Missing required integer field: pid",
+  "t_ms_from_session_start": 13169,
+  "t_start_ms_from_session_start": 13168,
+  "timestamp": "1781521477.738",
+  "tool": "hotkey"
+}

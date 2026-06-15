@@ -1,0 +1,10 @@
+{
+  "arguments": {
+    "name": "Cursor"
+  },
+  "result_summary": "Failed to activate packaged app \"Anysphere.Cursor\": The parameter is incorrect. (0x80070057)",
+  "t_ms_from_session_start": 126,
+  "t_start_ms_from_session_start": 75,
+  "timestamp": "1781521464.694",
+  "tool": "launch_app"
+}

@@ -1,0 +1,11 @@
+{
+  "cursor": {
+    "present": true,
+    "sample_count": 909
+  },
+  "schema_version": 1,
+  "started_at_monotonic_ms": 1781519675613,
+  "video": {
+    "present": false
+  }
+}

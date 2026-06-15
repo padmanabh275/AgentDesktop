@@ -1,0 +1,43 @@
+{
+  "node_id": "n:2",
+  "skill": "computer",
+  "status": "complete",
+  "inputs": [
+    "USER_QUERY"
+  ],
+  "result": {
+    "success": true,
+    "agent_name": "computer",
+    "output": {
+      "app": "Cursor",
+      "goal": "Create notes/s10_evidence.txt containing: Computer-Use Layer2b OK",
+      "path": "electron",
+      "turns": 1,
+      "result": "￼\n￼\n￼\n￼\n￼\nFile\nEdit\nSelection\nView\nGo\nRun\nTerminal\nHelp\n\n\nNavigation actions\n\n\nS10_Comp_Desktop\n\n\nToggle Agents (Ctrl+Alt+J)\n\nAgents Window\n\n￼\n￼\n￼\n￼\n\n\n\n\n\n￼\n￼\n\nS10_COMP_DESKTOP\n￼\n\nmemory.py\n￼\n\nperception.py\n￼\n\npersistence.py\n￼\n\npyproject.toml\n￼\n\npyrightconfig.json\n￼\n\nrecovery.py\n￼\n\nreplay.py\n￼\n\nrequirements.txt\n￼\n\nrun_ui.ps1\n￼\n\nsandbox.py\n￼\n\nschemas.py\n￼\n\nskills.py\n￼\n\ntest_mcp_server.py\n￼\n\nui_server.py\n￼\n\nusage.json\n￼\n\nuv.lock\n￼\n\nVALIDATION.md\n￼\n\nvector_index.py\n￼\n\ndocs\n￼\n\nllm_gatewayV10\n￼\n\n__pycache__\n￼\n\n.venv\n￼\n\nstatic\n￼\n\ntests\n￼\n\n.env\n￼\n\n.env.example\n￼\n\n.gitignore\n￼\n￼\n￼\n￼\n\ncode\n\nOUTLINE\n\nTIMELINE\n￼\n￼\n￼\n￼\n\ncomputer-use_skill_s10_b51b0a9a.plan.md\n\n￼\n\nagent_desktop_ui_e019db3b.plan.md\n\n\n\nPlans\n\n\ncomputer-use_skill_s10_b51b0a9a.plan.md\nAuto\nBuilt\n\n\nComputer-Use Skill (Session 10) + cua-driver\nContext\nThe repo has a mature Browser skill (code/browser/skill.py) with a visible cascade (Layer 1 extract → 2a deterministic → 2b a11y → 3 vision). There is no desktop/computer-use code today.\nNew dependency: cua-driver — a local desktop driver (Windows UI Automation, background/no-focus-steal) exposed as MCP stdio and CLI. It provides the assignment's start_recording, page (with electron_debugging_port), hotkey, get_window_state (capture modes ax / som / vision), and per-turn trajectory folders (turn-NNNNN/action.json, screenshot.png, app_state.json).\nUser choice: Wire cua-driver project-wide; each skill opts in via tools_allowed in agent_config.yaml. The computer skill is the primary cascade consumer; other skills (e.g. researcher) may use read-only cua tools when listed.\nPrimary OS: Windows. cua-driver is the official backend on Windows (not hand-rolled pyautogui / uiautomation).\n￼\ncua-driver infrastructure (all skills, opt-in)\nInstall prerequisite (not pip)\ncua-driver is a signed binary, installed via PowerShell (installation docs):\nirm https://raw.githubusercontent.com/trycua/cua/main/libs/cua-driver/scripts/install.ps1",
+      "actions": [
+        {
+          "turn": 1,
+          "thinking": "I need to create a new text file named 's10_evidence.txt' and write the content 'Computer-Use Layer2b OK' into it.",
+          "actions": [
+            {
+              "type": "page_js",
+              "javascript": "const fs = require('fs'); fs.writeFileSync('s10_evidence.txt', 'Computer-Use Layer2b OK');"
+            }
+          ]
+        }
+      ],
+      "trajectory_dir": "C:\\Users\\Padmanabh\\OneDrive\\Documents\\S10_Comp_Desktop\\code\\state\\sessions\\ui-b725e0e3\\computer\\trajectory_1781522472"
+    },
+    "artifacts": [],
+    "successors": [],
+    "cost": 0.0,
+    "elapsed_s": 11.551520586013794,
+    "provider": "",
+    "error": null,
+    "error_code": null
+  },
+  "prompt_sent": "# Computer skill (Session 10)\n\nYou are the **Computer** skill. The orchestrator invokes you with `metadata.app` and `metadata.goal`. You do not emit JSON successors â€” the cascade runs in Python via cua-driver.\n\n## Output contract (`ComputerOutput`)\n\nThe runtime returns:\n\n```json\n{\n  \"app\": \"Calculator\",\n  \"goal\": \"...\",\n  \"path\": \"read | hotkey | electron | ax | vision\",\n  \"turns\": 0,\n  \"result\": \"...\",\n  \"actions\": [],\n  \"trajectory_dir\": \"state/sessions/.../computer/trajectory_<ts>\"\n}\n```\n\n- `path` â€” which cascade layer succeeded (visible in replay).\n- `trajectory_dir` â€” cua-driver `start_recording` evidence (submit this directory).\n\n## Cascade layers (five)\n\n1. **read** â€” AX snapshot only, no LLM.\n2. **hotkey** â€” deterministic `hotkey_script` (Calculator arithmetic).\n3. **electron** â€” `electron_debugging_port` + cua `page` tool (Cursor/VS Code).\n4. **ax** â€” element_index loop + text LLM.\n5. **vision** â€” screenshot + vision LLM + pixel clicks.\n\nEscalation stops at the first layer that satisfies the goal.\n\n## Metadata\n\n| Field | Required | Purpose |\n|-------|----------|---------|\n| `app` | yes | Target app name (`Calculator`, `Cursor`, `browser` for canvas fixture) |\n| `goal` | yes | Verifiable task description |\n| `hotkey_script` | no | List of `{tool, args}` cua-driver steps (Layer 2a) |\n| `electron_debugging_port` | no | CDP port for Electron apps (Layer 2b electron) |\n| `force_path` | no | Pin layer: `read`, `hotkey`, `electron`, `ax`, `vision` |\n\n## Canvas fixture\n\nFor goals mentioning \"canvas fixture\" or \"red circle\", use `app: browser`.\nThe runtime opens `computer/fixtures/canvas_only.html` via cua-driver and\nuses the **vision** layer. Do not invent app names (e.g. CanvasFixtureApp).\n\n## Prerequisites\n\n- `cua-driver` installed: `code/scripts/setup_cua_driver.ps1`\n- Gateway V10 on `:8110`\n- For Cursor tasks: `computer/scripts/launch_cursor_debug.ps1` first\n\n## Errors\n\n- `interaction_failed` â€” all layers exhausted\n- `app_not_found` â€” cua-driver missing or app did not launch\n\nUSER_QUERY: In Cursor, create notes/s10_evidence.txt containing: Computer-Use Layer2b OK\n\nMEMORY HITS (8 from FAISS):\n  - [tool_outcome] Create notes/s10_evidence.txt with Computer-Use Layer2b OK\n      source: user_query\n      raw: In Cursor, create notes/s10_evidence.txt containing: Computer-Use Layer2b OK\n  - [fact] Create notes in Cursor with content about Computer-Use Layer2b.\n      source: user_query\n      raw: In Cursor, create notes/s10_evidence.txt containing: Computer-Use Layer2b OK\n  - [fact] Compare 5 AI coding tools: Cursor, GitHub Copilot, Codeium, Tabnine, Amazon Q Developer by free and paid plans.\n      source: user_query\n  - [tool_outcome] Open the canvas fixture and click inside the red circle.\n      source: user_query\n      raw: Open the canvas fixture and click inside the red circle on the canvas.\n  - [fact] Comparison of GitHub Copilot, Codeium, and Tabnine free vs paid plans.\n      source: user_query\n      raw: Compare GitHub Copilot, Codeium, and Tabnine free vs paid plans. Use browser on each tool's official pricing page with at least 3 visible actions per site (navigate, click pricing or expand plan details, scroll). Include a structured comparison table.\n  - [tool_outcome] Open the canvas fixture and click inside the red circle on the canvas.\n      source: user_query\n      raw: Open the canvas fixture and click inside the red circle on the canvas.\n  - [tool_outcome] Click inside the red circle on the canvas fixture.\n      source: user_query\n      raw: Open the canvas fixture and click inside the red circle on the canvas.\n  - [tool_outcome] Clicking inside the red circle on the canvas.\n      source: user_query\n      raw: Open the canvas fixture and click inside the red circle on the canvas.\n\nINPUTS:\n[\n  {\n    \"id\": \"USER_QUERY\",\n    \"kind\": \"query\",\n    \"value\": \"In Cursor, create notes/s10_evidence.txt containing: Computer-Use Layer2b OK\"\n  }\n]",
+  "started_at": 1781522472.9670458,
+  "completed_at": 1781522484.5185664,
+  "retries": 0
+}

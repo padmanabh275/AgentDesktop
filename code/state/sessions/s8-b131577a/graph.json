@@ -1,0 +1,157 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "skill": "planner",
+      "inputs": [
+        "USER_QUERY"
+      ],
+      "metadata": {},
+      "status": "complete",
+      "result": {
+        "success": true,
+        "agent_name": "planner",
+        "output": {
+          "rationale": "Leverage existing knowledge hits for GitHub Copilot and Codeium, while using browser actions for Tabnine to gather the necessary pricing details.",
+          "nodes": [
+            {
+              "skill": "browser",
+              "inputs": [],
+              "metadata": {
+                "label": "bTabnine",
+                "url": "https://www.tabnine.com/pricing",
+                "goal": "Navigate to the pricing section, click on the details of free and paid plans, and scroll to reveal all relevant information."
+              }
+            },
+            {
+              "skill": "distiller",
+              "inputs": [
+                "n:bTabnine"
+              ],
+              "metadata": {
+                "label": "dTabnine",
+                "question": "Extract structured fields for Tabnine's free and paid plans."
+              }
+            },
+            {
+              "skill": "formatter",
+              "inputs": [
+                "USER_QUERY",
+                "n:dTabnine"
+              ],
+              "metadata": {
+                "label": "out",
+                "question": "Provide a structured comparison table including GitHub Copilot, Codeium, and Tabnine's free and paid plans."
+              }
+            }
+          ]
+        },
+        "artifacts": [],
+        "successors": [
+          {
+            "skill": "browser",
+            "inputs": [],
+            "metadata": {
+              "label": "bTabnine",
+              "url": "https://www.tabnine.com/pricing",
+              "goal": "Navigate to the pricing section, click on the details of free and paid plans, and scroll to reveal all relevant information."
+            }
+          },
+          {
+            "skill": "distiller",
+            "inputs": [
+              "n:bTabnine"
+            ],
+            "metadata": {
+              "label": "dTabnine",
+              "question": "Extract structured fields for Tabnine's free and paid plans."
+            }
+          },
+          {
+            "skill": "formatter",
+            "inputs": [
+              "USER_QUERY",
+              "n:dTabnine"
+            ],
+            "metadata": {
+              "label": "out",
+              "question": "Provide a structured comparison table including GitHub Copilot, Codeium, and Tabnine's free and paid plans."
+            }
+          }
+        ],
+        "cost": 0.0,
+        "elapsed_s": 8.153345108032227,
+        "provider": "openai",
+        "error": null,
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:1"
+    },
+    {
+      "skill": "browser",
+      "inputs": [],
+      "metadata": {
+        "label": "bTabnine",
+        "url": "https://www.tabnine.com/pricing",
+        "goal": "Navigate to the pricing section, click on the details of free and paid plans, and scroll to reveal all relevant information."
+      },
+      "status": "failed",
+      "result": {
+        "success": false,
+        "agent_name": "browser",
+        "output": {},
+        "artifacts": [],
+        "successors": [],
+        "cost": 0.0,
+        "elapsed_s": 0.0,
+        "provider": "",
+        "error": "exception: HTTPStatusError: Server error '503 Service Unavailable' for url 'http://localhost:8109/v1/vision'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/503",
+        "error_code": null
+      },
+      "_result_typed": true,
+      "id": "n:2"
+    },
+    {
+      "skill": "distiller",
+      "inputs": [
+        "n:2"
+      ],
+      "metadata": {
+        "label": "dTabnine",
+        "question": "Extract structured fields for Tabnine's free and paid plans."
+      },
+      "status": "pending",
+      "id": "n:3"
+    },
+    {
+      "skill": "formatter",
+      "inputs": [
+        "USER_QUERY",
+        "n:3"
+      ],
+      "metadata": {
+        "label": "out",
+        "question": "Provide a structured comparison table including GitHub Copilot, Codeium, and Tabnine's free and paid plans."
+      },
+      "status": "pending",
+      "id": "n:4"
+    }
+  ],
+  "edges": [
+    {
+      "source": "n:1",
+      "target": "n:2"
+    },
+    {
+      "source": "n:2",
+      "target": "n:3"
+    },
+    {
+      "source": "n:3",
+      "target": "n:4"
+    }
+  ]
+}

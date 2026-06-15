@@ -1,0 +1,17 @@
+[1]<button>close banner</button>
+[2]<button>Open Preferences</button>
+[3]<button>Accept All</button>
+[4]<a>Learn more about Ketch for data privacy (opens in a new tab)</a>
+[5]<a>Get the Report</a>
+[6]<a>Tabnine</a>
+[7]<a>Products</a>
+[8]<a>How it works</a>
+[9]<a>Pricing</a>
+[10]<a>AI Coding Platform – AI chat completions and agentic workflows for software deve</a>
+[11]<a>Enterprise Context Engine – Organizational intelligence that gives agents system</a>
+[12]<a>Docs</a>
+[13]<a>Resources</a>
+[14]<a>Log in</a>
+[15]<a>Get a demo</a>
+[16]<a>Get a quote</a>
+[17]<a>Get a quote</a>
